@@ -1,0 +1,12 @@
+{
+    "name": "qbonaventure/discord-bot-core",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Quentin Bonaventure",
+            "email": "quentin@bonaventure.xyz"
+        }
+    ],
+    "require": {}
+}
