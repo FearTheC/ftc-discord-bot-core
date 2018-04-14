@@ -8,6 +8,8 @@ WORKDIR /app
 
 COPY ./composer.* /app/
 
+
+RUN docker-php-ext-install bcmath
 RUN composer update
 
 CMD ["php-fpm"]
