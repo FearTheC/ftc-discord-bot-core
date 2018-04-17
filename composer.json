@@ -8,5 +8,8 @@
             "email": "quentin@bonaventure.xyz"
         }
     ],
-    "require": {}
+    "require": {
+        "php-amqplib/php-amqplib": "^2.7",
+        "guzzlehttp/guzzle": "^6.3"
+    }
 }

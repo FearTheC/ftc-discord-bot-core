@@ -1,0 +1,42 @@
+version: '3'
+services:
+  core:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    tty: true
+    restart: always
+    volumes:
+      - ./src:/app/src:z
+      - ./public:/app/public:z
+      - ./config:/app/config:z
+      - ./vendor:/app/vendor:z
+      - ./composer.json:/app/composer.json:z
+      - ./composer.lock:/app/composer.lock:z
+    links:
+      - websocket
+  websocket:
+    image: qbonaventure/discord-bot-ws
+    expose:
+      - "7632"
+    tty: true
+    restart: always
+    volumes:
+      - ./ws-server-config.php:/app/config/app.php:z
+    links: 
+      - broker
+      - cache
+  broker:
+    image: rabbitmq:3.7-alpine
+    expose:
+      - "4369"
+      - "5671"
+      - "5672"
+      - "25672"
+  cache:
+    image: redis:alpine
+    expose:
+      - "6379"
+    volumes:
+      - ./redis-data:/data:z
+ 
