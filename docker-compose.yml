@@ -1,4 +1,7 @@
 version: '3'
+volumes:
+  websocket_config:
+  core_db:
 services:
   core:
     build:
@@ -15,6 +18,20 @@ services:
       - ./composer.lock:/app/composer.lock:z
     links:
       - websocket
+      - core-db
+    networks:
+      default:
+  core-db:
+    image: postgres:10-alpine
+    expose:
+      - "5432"
+    environment:
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: discord_bot
+    volumes:
+      - core_db:/var/lib/postgresql/data:z
+    networks:
+      default:
   websocket:
     image: qbonaventure/discord-bot-ws
     expose:
@@ -22,10 +39,12 @@ services:
     tty: true
     restart: always
     volumes:
-      - ./ws-server-config.php:/app/config/app.php:z
+      - ./config:/app/config:z
     links: 
       - broker
       - cache
+    networks:
+      default:
   broker:
     image: rabbitmq:3.7-alpine
     expose:
@@ -33,10 +52,17 @@ services:
       - "5671"
       - "5672"
       - "25672"
+    networks:
+      default:
   cache:
     image: redis:alpine
     expose:
       - "6379"
     volumes:
       - ./redis-data:/data:z
+    networks:
+      default:
+networks:
+    default:
+        driver: bridge
  
