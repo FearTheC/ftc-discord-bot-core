@@ -12,14 +12,7 @@ services:
     tty: true
     restart: always
     volumes:
-      - ./src:/app/src:z
-      - ./public:/app/public:z
-      - ./config:/app/config:z
-      - ./vendor:/app/vendor:z
-      - ./tests:/app/tests:z
-      - ./composer.json:/app/composer.json:z
-      - ./composer.lock:/app/composer.lock:z
-      - ./.pomm_cli_bootstrap.php:/app/.pomm_cli_bootstrap.php:z
+      - .:/app/
     links:
       - websocket
       - core-db

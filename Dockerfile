@@ -3,8 +3,7 @@ FROM php:7.2-fpm-alpine
 RUN apk --update --no-cache add \
     postgresql-dev; \
     curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer; \
-    docker-php-ext-install bcmath; \
-    docker-php-ext-install pgsql;
+    docker-php-ext-install bcmath pgsql pdo pdo_pgsql
 
 RUN sed -i '/phpize/i \
     [[ ! -f "config.m4" && -f "config0.m4" ]] && mv config0.m4 config.m4' \
