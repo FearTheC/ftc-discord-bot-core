@@ -1,15 +1,25 @@
 {
-    "name": "qbonaventure/discord-bot-core",
-    "type": "project",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Quentin Bonaventure",
-            "email": "quentin@bonaventure.xyz"
-        }
-    ],
-    "require": {
-        "php-amqplib/php-amqplib": "^2.7",
-        "guzzlehttp/guzzle": "^6.3"
-    }
+	"name" : "qbonaventure/discord-bot-core",
+	"type" : "project",
+	"license" : "MIT",
+	"authors" : [{
+			"name" : "Quentin Bonaventure",
+			"email" : "quentin@bonaventure.xyz"
+		}
+	],
+	"require" : {
+		"php-amqplib/php-amqplib" : "^2.7",
+		"guzzlehttp/guzzle" : "^6.3",
+		"pomm-project/cli": "^2.0",
+		"pomm-project/model-manager": "^2.0",
+		"pomm-project/foundation": "^2.0"
+	},
+	"require-dev" : {
+		"phpunit/phpunit" : "^7.1"
+	},
+	"autoload" : {
+		"psr-4" : {
+			"FTCBotCore\\" : "src"
+		}
+	}
 }
