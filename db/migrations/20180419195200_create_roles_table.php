@@ -6,14 +6,19 @@ use Phinx\Migration\AbstractMigration;
 class CreateRolesTable extends AbstractMigration
 {
 	
-    public function up()
+    public function change()
     {
-    	$this->exec('CREATE TABLE guilds_roles (id bigint, guild_id bigint, name text');
-    }
-    
-    public function down()
-    {
-    	$this->exec('DROP TABLE guilds_roles');
+        $options = [
+            'id' => false,
+            'primary_key' => ['id'],
+        ];
+        
+        $table = $this->table('guilds_roles', $options);
+        $table->addColumn('id', 'biginteger');
+        $table->addColumn('guild_id', 'biginteger');
+        $table->addColumn('name', 'text');
+        $table->addForeignKey('guild_id', 'guilds');
+        $table->create();
     }
     
 }

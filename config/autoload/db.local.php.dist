@@ -1,0 +1,16 @@
+<?php
+
+return [
+    'core-db' => [
+        'host' => '',
+        'port' => 5432,
+        'user' => '',
+        'password' => '',
+        'database' => '',
+    ],
+    'dependencies' => [
+        'factories' => [
+            FTCBotCore\Db\Core::class => FTCBotCore\Container\Db\Core::class, 
+        ]
+    ]
+];
