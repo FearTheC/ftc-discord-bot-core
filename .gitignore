@@ -1,3 +1,4 @@
 /vendor/
 .*
 config/autoload/*.local.php
+config/app.php

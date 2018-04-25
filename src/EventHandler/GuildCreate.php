@@ -15,8 +15,10 @@ class GuildCreate
             SELECT :id, :username  WHERE NOT EXISTS (SELECT 1 FROM users WHERE id = :id)";
     const INSERT_USER_ROLES_Q = "INSERT INTO users_roles (user_id, role_id)
             SELECT :user_id, :role_id  WHERE NOT EXISTS (SELECT 1 FROM users_roles WHERE user_id = :user_id AND role_id = :role_id)";
-    const INSERT_CHANNEL_Q = "INSERT INTO channels (id, guild_id, parent_id, type_id, name)
-            SELECT :id, :guild_id, :parent_id, :type_id, :name  WHERE NOT EXISTS (SELECT 1 FROM guilds WHERE id = :id)";
+    const INSERT_CHANNEL_Q = "INSERT INTO channels (id, guild_id, type_id, name)
+            SELECT :id, :guild_id, :type_id, :name  WHERE NOT EXISTS (SELECT 1 FROM channels WHERE id = :id)";
+    const INSERT_CHANNEL_PARENT_Q = "INSERT INTO channels_parents (channel_id, parent_id)
+            SELECT :channel_id, :parent_id WHERE NOT EXISTS (SELECT 1 FROM channels_parents WHERE channel_id = :channel_id AND parent_id = :parent_id)";
     
     private $database;
     
@@ -25,20 +27,27 @@ class GuildCreate
         $this->database = $database;
     }
     
-    public function execute($data)
+    public function __invoke($data)
     {
-//         $this->setGuild($data['id'], $data['name']);
+        $guildId = $data['id'];
+        $this->setGuild($guildId, $data['name']);
         
-//         foreach ($data['roles'] as $role) {
-//             $this->setRole($role['id'], $data['id'], $role['name']);
-//         }
+        foreach ($data['roles'] as $role) {
+            $this->setRole($role['id'], $guildId, $role['name']);
+        }
         
-//         foreach ($data['members'] as $user) {
-//             $this->setUser($user['user']['id'], $user['user']['username']);
-//             $this->setUserRoles($user['user']['id'], $user['roles']);
-//         }
+        foreach ($data['members'] as $user) {
+            $this->setUser($user['user']['id'], $user['user']['username']);
+            $this->setUserRoles($user['user']['id'], $user['roles']);
+        }
         foreach ($data['channels'] as $channel) {
-            $this->setChannel($channel['id'], $channel['type'], $channel['name'], $channel['guild_id'], $channel['parent_id']);
+            $this->setChannel($channel['id'], $channel['type'], $channel['name'], $guildId);
+        }
+        
+        foreach ($data['channels'] as $channel) {
+            if(isset($channel['parent_id'])) {
+                $this->setChannelParent($channel['id'], $channel['parent_id']);
+            }
         }
         
         return true;
@@ -84,14 +93,21 @@ class GuildCreate
         }
     }
     
-    private function setChannel($id, $type, $name, $guildId = null, $parentId = null)
+    private function setChannel($id, $type, $name, $guildId = null)
     {
         $q = $this->database->prepare(self::INSERT_CHANNEL_Q);
         $q->bindParam(':id', $id, \PDO::PARAM_INT);
         $q->bindParam(':guild_id', $guildId, \PDO::PARAM_INT);
-        $q->bindParam(':parent_id', $parentId, \PDO::PARAM_INT);
         $q->bindParam(':type_id', $type, \PDO::PARAM_INT);
         $q->bindParam(':name', $name, \PDO::PARAM_STR);
+        $q->execute();
+    }
+    
+    private function setChannelParent($id, $parentId)
+    {
+        $q = $this->database->prepare(self::INSERT_CHANNEL_PARENT_Q);
+        $q->bindParam(':channel_id', $id, \PDO::PARAM_INT);
+        $q->bindParam(':parent_id', $parentId, \PDO::PARAM_INT);
         $q->execute();
     }
     

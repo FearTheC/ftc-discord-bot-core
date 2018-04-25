@@ -5,7 +5,7 @@ namespace FTCBotCore\EventHandler;
 class TypingStart 
 {
     
-    public function execute()
+    public function __invoke()
     {
         echo "LLLLLLLLLLLLLLLLLLLLLL";
         

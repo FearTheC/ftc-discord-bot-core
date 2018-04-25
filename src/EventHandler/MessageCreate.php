@@ -21,7 +21,7 @@ class MessageCreate
         $this->dispatcher = $dispatcher;
     }
     
-    public function execute($message)
+    public function __invoke($message)
     {
         if ($this->hasCommand($message['content'])) {
             if (explode(' ', $message['content'])[0] == '!count') {
