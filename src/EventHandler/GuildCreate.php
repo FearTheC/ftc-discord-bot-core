@@ -2,7 +2,9 @@
 
 namespace FTCBotCore\EventHandler;
 
-use GuzzleHttp\ClientInterface;
+use FTCBotCore\Discord\Message;
+use FTCBotCore\Discord\Message\GuildCreate as GuildCreateMessage;
+use FTCBotCore\Command\Dispatcher as CommandDispatcher;
 
 class GuildCreate 
 {
@@ -22,29 +24,35 @@ class GuildCreate
     
     private $database;
     
-    public function __construct($database)
+    private $commandDispatcher;
+    
+    public function __construct(
+        \PDO $database,
+        CommandDispatcher $dispatcher)
     {
         $this->database = $database;
+        $this->commandDispatcher = $dispatcher;
     }
     
-    public function __invoke($data)
+    public function __invoke(
+        GuildCreateMessage $message)
     {
-        $guildId = $data['id'];
-        $this->setGuild($guildId, $data['name']);
+        $guildId = $message->getGuildId();
+        $this->setGuild($guildId, $message->getGuildName());
         
-        foreach ($data['roles'] as $role) {
+        foreach ($message->getRoles() as $role) {
             $this->setRole($role['id'], $guildId, $role['name']);
         }
         
-        foreach ($data['members'] as $user) {
+        foreach ($message->getUsers() as $user) {
             $this->setUser($user['user']['id'], $user['user']['username']);
             $this->setUserRoles($user['user']['id'], $user['roles']);
         }
-        foreach ($data['channels'] as $channel) {
+        foreach ($message->getChannels() as $channel) {
             $this->setChannel($channel['id'], $channel['type'], $channel['name'], $guildId);
         }
         
-        foreach ($data['channels'] as $channel) {
+        foreach ($message->getChannels() as $channel) {
             if(isset($channel['parent_id'])) {
                 $this->setChannelParent($channel['id'], $channel['parent_id']);
             }

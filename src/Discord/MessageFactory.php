@@ -1,17 +1,17 @@
 <?php declare(strict_types=1);
 
-namespace FTCBotCore\Broker;
+namespace FTCBotCore\Discord;
 
 class MessageFactory
 {
     
-    public static function fromRawMessage($message)
+    public function __invoke($message)
     {
-        $classname = self::resolveClassNameFromEvent($message['event']);
-        return new $classname($message['data']);
+        $classname = $this->resolveClassNameFromEvent($message['event']);
+        return new $classname($message);
     }
     
-    private static function resolveClassNameFromEvent($eventName)
+    private function resolveClassNameFromEvent($eventName)
     {
         $nameParts = explode('_', $eventName);
         

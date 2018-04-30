@@ -2,7 +2,6 @@
 
 return [
     'discord' => [
-        'token' => 'NDMyMjg5NTU3MzA4NzY4MjY2.DbVtTA.H45OL_4BNlX8v6LsG81kd6F4BLY/',
         'http' => [
             'base_url' => 'https://discordapp.com/api/v6',
             'defaults' => [

@@ -4,6 +4,7 @@ namespace FTCBotCore\EventHandler;
 
 
 use FTCBotCore\Db\DbCacheInterface;
+use FTCBotCore\Discord\Message\PresenceUpdate as PresenceUpdateMessage;
 
 class PresenceUpdate 
 {
@@ -26,20 +27,21 @@ class PresenceUpdate
     }
     
     
-    public function __invoke($data)
+    public function __invoke(PresenceUpdateMessage $message)
     {
-        $userId = (int)$data['user']['id'];
-        $guildId = $data['guild_id'];
-        $activity = $data['game'];
-        
-        if ($this->hasStartPlayingGame($data)) {
-            $gameId =  $this->getGameId($data['game']['name']);
-            $this->cache->setPlayingSession($gameId, $userId, $data['game']['timestamps']['start']);
+        $userId = $message->getUserId();
+        $guildId = $message->getGuildId();
+//         $activity = $data['game'];
+
+        if ($message->isGameSessionStart()) {
+//         if ($this->hasStartPlayingGame($data)) {
+            $gameId =  $this->getGameId($message->getGameName());
+            $this->cache->setPlayingSession($gameId, $userId, $message->getSessionStart());
             
             return true;
         }
         
-        if ($this->hasStoppedPlayingGame($data)) {
+        if ($this->hasStoppedPlayingGame($message->getData())) {
             $session = $this->cache->getPlayingSession($userId);
             list($gameId, $startTime) = explode('@', $session);
             $stopTime = round(microtime(true));

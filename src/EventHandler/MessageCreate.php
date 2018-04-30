@@ -4,6 +4,7 @@ namespace FTCBotCore\EventHandler;
 
 use GuzzleHttp\ClientInterface;
 use FTCBotCore\Command\Dispatcher;
+use FTCBotCore\Discord\Message;
 
 class MessageCreate 
 {
@@ -21,20 +22,20 @@ class MessageCreate
         $this->dispatcher = $dispatcher;
     }
     
-    public function __invoke($message)
+    public function __invoke(Message $message)
     {
-        if ($this->hasCommand($message['content'])) {
-            if (explode(' ', $message['content'])[0] == '!count') {
+        if ($command = $message->getCommand()) {
+            if ($command == 'count') {
                 $cmd = $this->dispatcher->get('count');
-                $results = $cmd($message['guild_id']);
+                $results = $cmd($message->getGuildId());
                 
                 $str = '';
                 foreach ($results as $row) {
                     $str .= $row['name'].': '.$row['count'].PHP_EOL;
                 }
-                $this->discordClient->answer($str, $message['channel_id']);
+                $this->discordClient->answer($str, $message->getChannelId());
             } else {
-                $this->discordClient->answer('Hello ! Je ne sais pas quoi te répondre pour l\'instant !', $message['channel_id']);
+                $this->discordClient->answer('Hello ! Je ne sais pas quoi te répondre pour l\'instant !', $message->getChannelId());
             }
         }
         

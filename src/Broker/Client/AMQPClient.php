@@ -5,7 +5,8 @@ use FTCBotCore\Broker\BrokerClient;
 use PhpAmqpLib\Connection\AMQPStreamConnection;
 use PhpAmqpLib\Channel\AMQPChannel;
 use PhpAmqpLib\Message\AMQPMessage;
-use FTCBotCore\Broker\Message;
+use FTCBotCore\Discord\Message;
+use FTCBotCore\Discord\MessageFactory;
 
 class AMQPClient implements BrokerClient
 {
@@ -25,10 +26,17 @@ class AMQPClient implements BrokerClient
      */
     private $callback;
     
+    /**
+     * @var MessageFactory 
+     */
+    private $messageFactory;
     
-    public function __construct(AMQPStreamConnection $connection)
-    {
+    public function __construct(
+        AMQPStreamConnection $connection,
+        MessageFactory $messageFactory
+     ) {
         $this->connection = $connection;
+        $this->messageFactory = $messageFactory;
         $this->channel = $this->connection->channel();
         $this->channel->basic_qos(null, 1, null);
         $this->channel->queue_declare('hello', false, true, false, false);
@@ -37,7 +45,12 @@ class AMQPClient implements BrokerClient
     private function setCallback(\Closure $callback) : void
     {
         $this->callback = function(AMQPMessage $amqpMsg) use ($callback) {
-            $message = self::instantiateMessage($amqpMsg);
+            $message = $this->instantiateMessage($amqpMsg);
+            
+            if (!$message) {
+                $this->ack($amqpMsg);
+                return;
+            }
             
             if($callback($message)) {
                 $this->ack($amqpMsg);
@@ -74,12 +87,20 @@ class AMQPClient implements BrokerClient
         $this->connection->close();
     }
     
-    private static function instantiateMessage(AMQPMessage $amqpMessage) : Message
+    private function instantiateMessage(AMQPMessage $amqpMessage) : ?Message
     {
         $amqpBody = json_decode($amqpMessage->body, true);
-        $message = new Message($amqpBody);
+        $arr = [
+            null,
+            'RESUMED',
+            'READY',
+        ];
+        if (!in_array($amqpBody['event'], $arr)) {
+            $message = ($this->messageFactory)($amqpBody);
+            return $message;
+        }
         
-        return $message;
+        return null;
     }
     
 }

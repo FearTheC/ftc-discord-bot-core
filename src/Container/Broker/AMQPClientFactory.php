@@ -18,8 +18,9 @@ class AMQPClientFactory
             $config['username'],
             $config['password']
         );
+        $messageFactory = $container->get('EventMessageFactory');
         
-        return new AMQPClient($connection);
+        return new AMQPClient($connection, $messageFactory);
     }
     
 }

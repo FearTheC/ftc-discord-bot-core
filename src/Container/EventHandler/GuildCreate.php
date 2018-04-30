@@ -4,6 +4,7 @@ namespace FTCBotCore\Container\EventHandler;
 use Psr\Container\ContainerInterface;
 use FTCBotCore\EventHandler\GuildCreate as GuildCreateInstance;
 use FTCBotCore\Db\Core;
+use FTCBotCore\Command\Dispatcher;
 
 class GuildCreate
 {
@@ -11,8 +12,9 @@ class GuildCreate
     public function __invoke(ContainerInterface $container, $requestedName)
     {
         $database = $container->get(Core::class);
+        $dispatcher = $container->get(Dispatcher::class);
 
-        return new GuildCreateInstance($database);
+        return new GuildCreateInstance($database, $dispatcher);
     }
     
 }
