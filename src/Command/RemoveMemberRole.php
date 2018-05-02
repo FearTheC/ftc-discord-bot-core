@@ -2,42 +2,42 @@
 namespace FTCBotCore\Command;
 
 use FTCBotCore\Discord\Message\MessageCreate;
-use FTCBotCore\Discord\Client;
 
-class CountMembers
+class RemoveMemberRole
 {
     
-    const SELECT_QUERY = "SELECT DISTINCT r.name, count(users.id) FROM users
-        JOIN users_roles roles on roles.user_id = users.id
-        JOIN guilds_roles r ON r.id = roles.role_id AND r.guild_id = :guild_id AND r.name IN (%s)
-        GROUP BY (r.name);";
-    const SELECT_GUILD_ROLES = "SELECT name FROM guilds_roles where guild_id = :guild_id and name <> '@everyone'";
+//     const SELECT_QUERY = "SELECT DISTINCT r.name, count(users.id) FROM users
+//         JOIN users_roles roles on roles.user_id = users.id
+//         JOIN guilds_roles r ON r.id = roles.role_id AND r.guild_id = :guild_id AND r.name IN (%s)
+//         GROUP BY (r.name);";
+//     const SELECT_GUILD_ROLES = "SELECT name FROM guilds_roles where guild_id = :guild_id and name <> '@everyone'";
+
+    const CMD_SYNTAX = "!removeMemberRole %s %s";
     
     private $database;
     
-    /**
-     * @var Client
-     */
-    private $discordClient;
-    
-    public function __construct(\PDO $database, Client $discordClient)
+    public function __construct(\PDO $database)
     {
         $this->database = $database;
-        $this->discordClient = $discordClient;
     }
     
     public function __invoke(MessageCreate $msg)
     {
+        
+        return $this->help();
         $args = array_slice(explode(' ', $msg->getContent()), 1);
         if ($args) {
             $results = $this->getRoleCount($msg->getGuildId(), $args);
         } else {
             $results = $this->getAvailableRoleArgs($msg->getGuildId());
         }
-
-        $results = 'Hey <@'.$msg->getAuthorId().'>!'.PHP_EOL.$results;
-        $this->discordClient->deleteMessage($msg);
-        $this->discordClient->answer($results, $msg->getChannelId());
+        
+        return $results;
+    }
+    
+    private function help()
+    {
+        return sprintf(self::CMD_SYNTAX, "MemberName", "Role");
     }
     
     private function getRoleCount(int $guildId, array $args)

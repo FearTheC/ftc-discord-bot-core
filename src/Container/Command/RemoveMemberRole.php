@@ -3,18 +3,17 @@ namespace FTCBotCore\Container\Command;
 
 
 use Psr\Container\ContainerInterface;
-use FTCBotCore\Command\CountMembers as CountMembersInstance;
+use FTCBotCore\Command\RemoveMemberRole as RemoveMemberRoleInstance;
 use FTCBotCore\Db\Core;
 
-class CountMembers
+class RemoveMemberRole
 {
     
     public function __invoke(ContainerInterface $container)
     {
         $database = $container->get(Core::class);
-        $client = $container->get('discord-http-client');
         
-        return new CountMembersInstance($database, $client);
+        return new RemoveMemberRoleInstance($database);
     }
     
 }

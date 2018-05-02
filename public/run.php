@@ -11,6 +11,16 @@ require 'vendor/autoload.php';
 
 $sm = include 'config/container.php';
 
+$botConfig = include 'config/autoload/bot.local.php';
+
+
+function alertOwner($discordClient, $ownerId)
+{
+    $discordClient->sendDM($ownerId, 'I\'ve stopped working');
+}
+
+register_shutdown_function('alertOwner', $sm->get('discord-http-client'), $botConfig['owner_id']);
+
 $broker = $sm->get(BrokerClient::class);
 
 echo ' [*] Waiting for messages. To exit press CTRL+C', "\n";
@@ -30,3 +40,5 @@ $callback = function(Message $message) use ($sm) {
 };
 
 $broker->consume($callback);
+
+

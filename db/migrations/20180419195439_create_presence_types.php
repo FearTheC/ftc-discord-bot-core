@@ -19,4 +19,9 @@ class CreatePresenceTypes extends AbstractMigration
         $table->create();
     }
     
+    public function down()
+    {
+        $this->execute('DROP TABLE presence_types');
+    }
+    
 }

@@ -13,17 +13,20 @@ class Dispatcher
     
     public function add($name, $command)
     {
-        var_dump($name);
         $this->commands[$name] = $command;
     }
     
-    public function had($name)
+    public function has($name)
     {
         return (isset($this->commands[$name]));
     }
     
     public function get($name)
     {
+        if (!$this->has($name)) {
+            return false;
+        }
+        
         return $this->commands[$name];
     }
     

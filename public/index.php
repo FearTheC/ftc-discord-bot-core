@@ -5,6 +5,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 use Zend\Config\Config;
+use FTCBotCore\CLI\Application;
 
 // Change to the project root, to simplify resolving paths
 chdir(dirname(__DIR__));
@@ -13,7 +14,7 @@ chdir(dirname(__DIR__));
 require 'vendor/autoload.php';
 
 $container = include 'config/container.php';
-$app       = $container->get(Zend\Expressive\Application::class);
+$app       = $container->get(Application::class);
 
 exit();
 $app->pipeRoutingMiddleware();

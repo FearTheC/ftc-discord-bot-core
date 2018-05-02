@@ -12,7 +12,7 @@ abstract class Message
     /**
      * @var array
      */
-    private $data;
+    protected $data;
     
     /*
      * @var float
@@ -30,6 +30,13 @@ abstract class Message
         return $this->data;
     }
     
+    public function getId() : int
+    {
+        if (isset($this->data['id'])) {
+            return $this->data['id'];
+        }
+    }
+    
     public function getEventType() : string
     {
         return static::EVENT_NAME;
@@ -39,6 +46,20 @@ abstract class Message
     {
         if (isset($this->data['user'])) {
             return $this->data['user']['id'];
+        }
+    }
+    
+    public function getUsername() : string
+    {
+        if (isset($this->data['user'])) {
+            return $this->data['user']['username'];
+        }
+    }
+    
+    public function getAuthorId() : int
+    {
+        if (isset($this->data['author'])) {
+            return $this->data['author']['id'];
         }
     }
     

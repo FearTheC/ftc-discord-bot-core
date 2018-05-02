@@ -11,12 +11,15 @@ class PresenceUpdate extends Message
     
     public function isGameSessionStart()
     {
-        return (isset($this->getData()['game']) && $this->getData()['game']['type'] == 0);
+        return (isset($this->getData()['game']) &&
+            $this->getData()['game']['type'] == 0 &&
+            isset($this->getData()['game']['timestamps']['start']));
     }
     
     public function getSessionStart()
     {
         $start = null;
+
         if ($this->isGameSessionStart()) {
             $start = $this->getData()['game']['timestamps']['start'];
         }

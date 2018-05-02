@@ -15,6 +15,8 @@ return [
     'dependencies' => [
         'factories' => [
             'discord-http-client' => FTCBotCore\Container\Discord\HttpClient::class,
+            \FTCBotCore\Discord\Repository\GuildMemberRepository::class =>
+                \FTCBotCore\Container\Discord\Repository\GuildMemberRepository::class,
         ],
     ],
 ];

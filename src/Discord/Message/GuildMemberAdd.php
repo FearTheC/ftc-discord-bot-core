@@ -4,10 +4,10 @@ namespace FTCBotCore\Discord\Message;
 
 use FTCBotCore\Discord\Message;
 
-class GuildMemberUpdate extends Message
+class GuildMemberAdd extends Message
 {
     
-    const EVENT_NAME = 'GUILD_MEMBER_UPDATE';
+    const EVENT_NAME = 'GUILD_MEMBER_ADD';
     
     public function getUserRoles()
     {
