@@ -12,23 +12,27 @@ class Client extends HttpClient
     const MESSAGE_URI = self::BASE_URL.'channels/%s/messages/%d';
     const CREATE_DM = self::BASE_URL.'users/@me/channels';
     
+    private $defaultHeaders = [
+        'Accept' => 'application/json',
+        'Authorization' => 'Bot ',
+        'Content-Type' => 'application/json',
+    ];
+    
     private $defaults;
     
     public function __construct($config)
     {
-        parent::__construct($config);
+        $authToken = $this->defaultHeaders['Authorization'].$config['auth_token'];
+        $this->defaultHeaders['Authorization'] = $authToken;
+        parent::__construct($config['http']);
     }
     
     public function answer(string $message, $channelId)
     {
         $this->request('POST', sprintf(self::ANSWER_URI, $channelId),
             [
-            'headers' => [
-                        'Accept' => 'application/json',
-                        'Authorization' => 'Bot NDMyMjg5NTU3MzA4NzY4MjY2.DbVtTA.H45OL_4BNlX8v6LsG81kd6F4BLY',
-                        'Content-Type' => 'application/json',
-                    ],
-            'json' => [
+                'headers' => $this->defaultHeaders,
+                'json' => [
                         'content' => $message,
                 ]
         ]);
@@ -38,11 +42,7 @@ class Client extends HttpClient
     {
         $this->request('DELETE', sprintf(self::MESSAGE_URI, $message->getChannelId(), $message->getId()),
         [
-            'headers' => [
-                'Accept' => 'application/json',
-                'Authorization' => 'Bot NDMyMjg5NTU3MzA4NzY4MjY2.DbVtTA.H45OL_4BNlX8v6LsG81kd6F4BLY',
-                'Content-Type' => 'application/json',
-            ],
+            'headers' => $this->defaultHeaders,
         ]);
     }
     
@@ -50,11 +50,7 @@ class Client extends HttpClient
     {
         $ff = $this->request('POST', self::CREATE_DM,
         [
-            'headers' => [
-                'Accept' => 'application/json',
-                'Authorization' => 'Bot NDMyMjg5NTU3MzA4NzY4MjY2.DbVtTA.H45OL_4BNlX8v6LsG81kd6F4BLY',
-                'Content-Type' => 'application/json',
-            ],
+            'headers' => $this->defaultHeaders,
         'json' => [
             'recipient_id' => $userId,
         ]
@@ -64,7 +60,7 @@ class Client extends HttpClient
         
         $channelId = $response['id'];
         
-        $this->answer('dlfkmsdfkl', $channelId);
+        $this->answer($textMsg, $channelId);
     }
     
 }

@@ -1,7 +1,8 @@
 <?php
 return [
     'discord' => [
-        'token' => '', // The Discord bot token
+        'token' => '', // The Discord bot token,
+        'auth_token' => '', // HTTP auth header token
     ]
 ];
 
