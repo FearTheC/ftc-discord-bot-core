@@ -6,16 +6,17 @@ use FTCBotCore\EventHandler\GuildMemberAdd as GuildMemberAddInstance;
 use FTCBotCore\Db\Core;
 use FTCBotCore\Db\DbCacheInterface;
 use FTCBotCore\Command\Dispatcher;
+use FTCBotCore\Discord\Repository\GuildMemberRepository;
+use FTCBotCore\Container\Discord\Repository\GuildMemberReposito;
 
 class GuildMemberAdd
 {
     
     public function __invoke(ContainerInterface $container, $requestedName)
     {
-        $database = $container->get(Core::class);
-        $cache = $container->get(DbCacheInterface::class);
+        $repository = $container->get(GuildMemberRepository::class);
 
-        return new GuildMemberAddInstance($database, $cache);
+        return new GuildMemberAddInstance($repository);
     }
     
 }

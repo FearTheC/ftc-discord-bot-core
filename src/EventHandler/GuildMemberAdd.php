@@ -6,6 +6,8 @@ use GuzzleHttp\ClientInterface;
 use FTCBotCore\Command\Dispatcher;
 use FTCBotCore\Discord\Message;
 use FTCBotCore\Db\DbCacheInterface;
+use FTCBotCore\Discord\Model\GuildMemberRepository;
+use FTCBotCore\Discord\Model\GuildMember;
 
 class GuildMemberAdd 
 {
@@ -14,40 +16,26 @@ class GuildMemberAdd
     const ADD_GUILD_USER_Q = "INSERT INTO guilds_users VALUES (:guild_id, :user_id)";
     
     /**
-     * @var DbCacheInterface
+     * @var GuildMemberRepository
      */
-    private $cache;
-    
-    /**
-     * @var \PDO
-     */
-    private $database;
+    private $repository;
     
 
     public function __construct(
-        $database,
-        DbCacheInterface $cache
+        GuildMemberRepository $repository
     ) {
-        $this->database = $database;
-        $this->cache = $cache;
+        $this->repository= $repository;
     }
     
     public function __invoke(Message $message)
     {
-        $userId = $message->getUserId();
-        $username = $message->getUsername();
         $guildId = $message->getGuildId();
         
-        $q = $this->database->prepare(self::ADD_USER_Q);
-        $q->bindParam('user_id', $userId, \PDO::PARAM_INT);
-        $q->bindParam('username', $username, \PDO::PARAM_STR);
-        $q->execute();
+        $member = GuildMember::register($message->getUserId(), $message->getUsername());
         
-        $q = $this->database->prepare(self::ADD_GUILD_USER_Q);
-        $q->bindParam('guild_id', $guildId, \PDO::PARAM_INT);
-        $q->bindParam('user_id', $userId, \PDO::PARAM_INT);
-        $q->execute();
-        
+        $this->repository->add($member);
+        $this->repository->addGuild($member, $guildId);
+
         return true;
     }
     

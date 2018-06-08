@@ -15,7 +15,7 @@ class GuildCreate
             SELECT :id, :guild_id, :name  WHERE NOT EXISTS (SELECT 1 FROM guilds_roles WHERE id = :id)";
     const INSERT_USER_Q = "INSERT INTO users (id, username)
             SELECT :id, :username  WHERE NOT EXISTS (SELECT 1 FROM users WHERE id = :id)";
-    const ADD_GUILD_USER_Q = "INSERT INTO guilds_users VALUES (:guild_id, :user_id) ON CONFLICT ON CONSTRAINT guilds_users_pkey DO NOTHING";
+    const ADD_GUILD_USER_Q = "INSERT INTO guilds_users VALUES (:guild_id, :user_id, :joined_at) ON CONFLICT ON CONSTRAINT guilds_users_pkey DO NOTHING";
     const INSERT_USER_ROLES_Q = "INSERT INTO users_roles (user_id, role_id)
             SELECT :user_id, :role_id  WHERE NOT EXISTS (SELECT 1 FROM users_roles WHERE user_id = :user_id AND role_id = :role_id)";
     const INSERT_CHANNEL_Q = "INSERT INTO channels (id, guild_id, type_id, name)
@@ -48,8 +48,9 @@ class GuildCreate
         foreach ($message->getUsers() as $user) {
             $this->setUser($user['user']['id'], $user['user']['username']);
             $this->setUserRoles($user['user']['id'], $user['roles']);
-            $this->setGuildUser($guildId, $user['user']['id']);
+            $this->setUserGuild($guildId, $user['user']['id'], $user['joined_at']);
         }
+
         foreach ($message->getChannels() as $channel) {
             $this->setChannel($channel['id'], $channel['type'], $channel['name'], $guildId);
         }
@@ -103,11 +104,18 @@ class GuildCreate
         }
     }
     
-    private function setGuildUser($guildId, $userId)
+    private function setUserGuild($guildId, $userId, $joinedAt)
     {
         $q = $this->database->prepare(self::ADD_GUILD_USER_Q);
         $q->bindParam(':user_id', $userId, \PDO::PARAM_INT);
         $q->bindParam(':guild_id', $guildId, \PDO::PARAM_INT);
+        $q->bindParam('joined_at', $joinedAt);
+        $q->execute();
+
+        $q = $this->database->prepare("update guilds_users set joined_date = :joined_at WHERE user_id = :user_id and guild_id = :guild_id");
+        $q->bindParam(':user_id', $userId, \PDO::PARAM_INT);
+        $q->bindParam(':guild_id', $guildId, \PDO::PARAM_INT);
+        $q->bindParam('joined_at', $joinedAt, \PDO::PARAM_INT);
         $q->execute();
     }
     

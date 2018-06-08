@@ -23,11 +23,13 @@ register_shutdown_function('alertOwner', $sm->get('discord-http-client'), $botCo
 
 $broker = $sm->get(BrokerClient::class);
 
+
+
 echo ' [*] Waiting for messages. To exit press CTRL+C', "\n";
 
 $callback = function(Message $message) use ($sm) {
     echo " [x] Received '".$message->getEventType().": ", json_encode($message->getData()).PHP_EOL;
-
+    
     if ($sm->has($message->getEventType())) {
         $handler = $sm->get($message->getEventType());
         

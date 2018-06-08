@@ -2,12 +2,11 @@
 
 namespace FTCBotCore\EventHandler;
 
-class TypingStart 
+class TypingStart extends Message
 {
     
     public function __invoke()
     {
-        echo "LLLLLLLLLLLLLLLLLLLLLL";
         
         return true;
     }
