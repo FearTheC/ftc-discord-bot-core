@@ -14,6 +14,8 @@ class GuildMemberRepository extends PostgresqlRepository implements RepositoryIn
     
     const ADD_GUILD_USER_Q = "INSERT INTO guilds_users VALUES (:guild_id, :user_id)";
     
+    const ADD_USER_ROLE = "INSERT INTO users_roles VALUES (:user_id, role)";
+    
     /**
      * @var GuildMember[]
      */
@@ -35,6 +37,14 @@ class GuildMemberRepository extends PostgresqlRepository implements RepositoryIn
         $q = $this->persistence->prepare(self::ADD_GUILD_USER_Q);
         $q->bindParam('guild_id', $guildId, \PDO::PARAM_INT);
         $q->bindValue('user_id', $member->getId(), \PDO::PARAM_INT);
+        $q->execute();
+    }
+    
+    public function addRole(int $memberId, int $roleName)
+    {
+        $q = $this->persistence->prepare(self::ADD_USER_ROLE);
+        $q->bindValue('user_id', $member->getId(), \PDO::PARAM_INT);
+        $q->bindParam('role_id', $role->getId(), \PDO::PARAM_INT);
         $q->execute();
     }
     

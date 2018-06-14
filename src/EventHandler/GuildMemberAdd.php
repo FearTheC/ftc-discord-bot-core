@@ -2,10 +2,7 @@
 
 namespace FTCBotCore\EventHandler;
 
-use GuzzleHttp\ClientInterface;
-use FTCBotCore\Command\Dispatcher;
 use FTCBotCore\Discord\Message;
-use FTCBotCore\Db\DbCacheInterface;
 use FTCBotCore\Discord\Model\GuildMemberRepository;
 use FTCBotCore\Discord\Model\GuildMember;
 
@@ -37,11 +34,6 @@ class GuildMemberAdd
         $this->repository->addGuild($member, $guildId);
 
         return true;
-    }
-    
-    private function hasCommand($message)
-    {
-        return (substr($message, 0, 1) == '!');
     }
 
 }

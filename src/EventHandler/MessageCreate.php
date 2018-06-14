@@ -32,20 +32,10 @@ class MessageCreate
         if ($command = $message->getCommand()) {
             if ($cmdHandler = $this->dispatcher->get($command)) { 
                 $str = $cmdHandler($message);
-                
-//                 if ($str) {
-//                     $this->discordClient->answer($str, $message->getChannelId());
-//                 }
             }
         }
         
         return true;
-    }
-    
-    
-    private function hasCommand($message)
-    {
-        return (substr($message, 0, 1) == '!');
     }
 
 }

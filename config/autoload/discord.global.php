@@ -15,8 +15,10 @@ return [
     'dependencies' => [
         'factories' => [
             'discord-http-client' => FTCBotCore\Container\Discord\HttpClient::class,
-            \FTCBotCore\Discord\Repository\GuildMemberRepository::class =>
-                \FTCBotCore\Container\Discord\Repository\GuildMemberRepository::class,
+            FTCBotCore\Discord\Model\GuildRoleRepository::class =>
+            FTCBotCore\Container\Discord\Repository\GuildRoleRepository::class,
+            FTCBotCore\Discord\Model\GuildMemberRepository::class =>
+            FTCBotCore\Container\Discord\Repository\GuildMemberRepository::class,
         ],
     ],
 ];

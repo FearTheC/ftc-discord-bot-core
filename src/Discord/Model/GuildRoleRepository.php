@@ -9,4 +9,6 @@ interface GuildRoleRepository
     
     public function findById(int $id) : GuildRole;
     
+    public function findByName(string $name, int $guildId) : ?GuildRole;
+    
 }
