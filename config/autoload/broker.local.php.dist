@@ -1,0 +1,17 @@
+<?php
+return [
+    'broker' => [
+        'host' => '',
+        'username' => '',
+        'password' => '',
+        'port' => '',
+    ],
+    'dependencies' => [
+        'factories' => [
+            \FTCBotCore\Broker\BrokerClient::class => \FTCBotCore\Container\Broker\AMQPClientFactory::class,
+        ],
+        'invokables' => [
+            'EventMessageFactory' => \FTCBotCore\Discord\MessageFactory::class,
+        ],
+    ],
+];

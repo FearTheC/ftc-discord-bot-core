@@ -21,6 +21,17 @@ function alertOwner($discordClient, $ownerId)
 
 register_shutdown_function('alertOwner', $sm->get('discord-http-client'), $botConfig['owner_id']);
 
+
+
+$brokerConfig = $sm->get('config')['broker'];
+while (($connection = fsockopen($brokerConfig['host'], $brokerConfig['port'])) === false) {
+    echo 'Waiting for broker service startup'.PHP_EOL;
+    sleep(1);
+}
+fclose($connection);
+echo 'Broker service started up'.PHP_EOL;
+
+
 $broker = $sm->get(BrokerClient::class);
 
 

@@ -12,13 +12,17 @@ services:
       dockerfile: Dockerfile
     tty: true
     restart: always
+    env_file:
+      - .env
     volumes:
       - .:/app/
     links:
       - websocket
       - core-db
+      - broker
     networks:
       default:
+#    command: sh /app/entrypoint.sh
       
 #  core-ui-server:
 #      image: nginx:alpine
