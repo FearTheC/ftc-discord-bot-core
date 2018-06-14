@@ -25,4 +25,4 @@ RUN composer install
 RUN rm -rf /var/cache/apk/*
 
 
-CMD ["php /app/public/run.php"]
+CMD ["php", "/app/public/run.php"]
