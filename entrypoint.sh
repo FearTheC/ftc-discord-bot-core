@@ -9,6 +9,7 @@ cp /app/config/autoload/broker.local.php.dist /app/config/autoload/broker.local.
 cp /app/config/autoload/db.local.php.dist /app/config/autoload/db.local.php
 cp /app/config/autoload/discord.local.php.dist /app/config/autoload/discord.local.php
 cp /app/phinx.yml.dist /app/phinx.yml
+chown $USER_ID:$USER_ID phinx.yml
 
 sed -i "s/'owner_id' => ''/'owner_id' => '$FTCBOT_OWNER_ID'/g" /app/config/autoload/bot.local.php
 
@@ -34,6 +35,7 @@ sed -i "s/user:/user: $FTCBOT_DB_USER/g" /app/phinx.yml
 sed -i "s/pass: ''/pass: '$FTCBOT_DB_PASSWORD'/g" /app/phinx.yml
 sed -i "s/name:/name: $FTCBOT_DB_DBNAME/g" /app/phinx.yml
 
+sleep 3
 
 vendor/bin/phinx migrate -v
 
