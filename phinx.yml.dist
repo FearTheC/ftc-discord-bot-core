@@ -7,9 +7,10 @@ environments:
     default_database: development
     development:
         adapter: pgsql
-        host: core-db
-        name: discord_bot
-        user: postgres
-        pass: 'password'
-        port: 5432
+        host: 
+        name: 
+        user: 
+        pass: ''
+        port: 
         charset: utf8
+        
