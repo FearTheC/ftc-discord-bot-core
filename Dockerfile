@@ -15,6 +15,7 @@ COPY ./src/ /app/src/
 COPY ./public/ /app/public/
 COPY ./config/ /app/config/
 COPY ./composer.* /app/
+COPY ./phinx.yml.dist /app/
 COPY entrypoint.sh /
 
 RUN chmod +x /entrypoint.sh

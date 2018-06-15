@@ -9,8 +9,8 @@ cp /app/config/autoload/broker.local.php.dist /app/config/autoload/broker.local.
 cp /app/config/autoload/db.local.php.dist /app/config/autoload/db.local.php
 cp /app/config/autoload/discord.local.php.dist /app/config/autoload/discord.local.php
 cp /app/phinx.yml.dist /app/phinx.yml
-chown $USER_ID:$USER_ID phinx.yml
-chmod 777 phinx.yml
+#chown $USER_ID:$USER_ID phinx.yml
+#chmod 777 phinx.yml
 
 sed -i "s/'owner_id' => ''/'owner_id' => '$FTCBOT_OWNER_ID'/g" /app/config/autoload/bot.local.php
 
