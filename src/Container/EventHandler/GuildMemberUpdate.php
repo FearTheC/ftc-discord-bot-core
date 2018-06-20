@@ -3,7 +3,7 @@ namespace FTCBotCore\Container\EventHandler;
 
 use Psr\Container\ContainerInterface;
 use FTCBotCore\EventHandler\GuildMemberUpdate as GuildMemberUpdateInstance;
-use FTCBotCore\Db\Core;
+use FTC\Discord\Db\Core;
 use FTCBotCore\Db\DbCacheInterface;
 
 class GuildMemberUpdate

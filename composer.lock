@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a448c9749e64360a9b704edc4c9c3e66",
+    "content-hash": "3b8ea64ea242fc272a7d0c8fc2cc93e5",
     "packages": [
         {
             "name": "beberlei/assert",
@@ -664,17 +664,55 @@
             "time": "2016-08-06T14:39:51+00:00"
         },
         {
+            "name": "qbonaventure/discord-db-postgresql",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/QBonaventure/discord-db-postgresql.git",
+                "reference": "499eaa0637137bac344988163a7918b0d995471b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/QBonaventure/discord-db-postgresql/zipball/499eaa0637137bac344988163a7918b0d995471b",
+                "reference": "499eaa0637137bac344988163a7918b0d995471b",
+                "shasum": ""
+            },
+            "require": {
+                "qbonaventure/discord-model": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "FTC\\Discord\\Db\\Postgresql\\": "src"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Quentin Bonaventure",
+                    "email": "quentin@bonaventure.xyz"
+                }
+            ],
+            "support": {
+                "source": "https://github.com/QBonaventure/discord-db-postgresql/tree/master",
+                "issues": "https://github.com/QBonaventure/discord-db-postgresql/issues"
+            },
+            "time": "2018-06-20T12:37:50+00:00"
+        },
+        {
             "name": "qbonaventure/discord-model",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/QBonaventure/discord-model.git",
-                "reference": "010958f73a793ce0cb2a2bfce9ee879fbc067ba5"
+                "reference": "cc9b168f0bb98e57e26a92a061de6ed0f467c3b6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/QBonaventure/discord-model/zipball/010958f73a793ce0cb2a2bfce9ee879fbc067ba5",
-                "reference": "010958f73a793ce0cb2a2bfce9ee879fbc067ba5",
+                "url": "https://api.github.com/repos/QBonaventure/discord-model/zipball/cc9b168f0bb98e57e26a92a061de6ed0f467c3b6",
+                "reference": "cc9b168f0bb98e57e26a92a061de6ed0f467c3b6",
                 "shasum": ""
             },
             "require-dev": {
@@ -696,7 +734,7 @@
                     "email": "quentin@bonaventure.xyz"
                 }
             ],
-            "time": "2018-06-20T07:08:02+00:00"
+            "time": "2018-06-20T12:33:32+00:00"
         },
         {
             "name": "ralouphie/getallheaders",
@@ -895,12 +933,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/config.git",
-                "reference": "9ec666b699b73e59f12a5d659c786562b53b4e4a"
+                "reference": "6a92d96bb4edf5293627b0ce4b155f3de68a920a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/config/zipball/9ec666b699b73e59f12a5d659c786562b53b4e4a",
-                "reference": "9ec666b699b73e59f12a5d659c786562b53b4e4a",
+                "url": "https://api.github.com/repos/symfony/config/zipball/6a92d96bb4edf5293627b0ce4b155f3de68a920a",
+                "reference": "6a92d96bb4edf5293627b0ce4b155f3de68a920a",
                 "shasum": ""
             },
             "require": {
@@ -950,7 +988,7 @@
             ],
             "description": "Symfony Config Component",
             "homepage": "https://symfony.com",
-            "time": "2018-06-08T09:40:00+00:00"
+            "time": "2018-06-20T11:16:05+00:00"
         },
         {
             "name": "symfony/console",
@@ -2827,7 +2865,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "qbonaventure/discord-model": 20
+        "qbonaventure/discord-db-postgresql": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

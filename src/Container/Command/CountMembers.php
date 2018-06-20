@@ -4,7 +4,7 @@ namespace FTCBotCore\Container\Command;
 
 use Psr\Container\ContainerInterface;
 use FTCBotCore\Command\CountMembers as CountMembersInstance;
-use FTCBotCore\Db\Core;
+use FTC\Discord\Db\Core;
 
 class CountMembers
 {

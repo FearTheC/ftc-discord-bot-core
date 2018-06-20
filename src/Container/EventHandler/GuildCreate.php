@@ -3,7 +3,7 @@ namespace FTCBotCore\Container\EventHandler;
 
 use Psr\Container\ContainerInterface;
 use FTCBotCore\EventHandler\GuildCreate as GuildCreateInstance;
-use FTCBotCore\Db\Core;
+use FTC\Discord\Db\Core;
 use FTCBotCore\Command\Dispatcher;
 
 class GuildCreate
