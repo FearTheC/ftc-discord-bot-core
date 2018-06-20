@@ -1,6 +1,7 @@
 FROM php:7.2-fpm-alpine
 
 RUN apk --update --no-cache add \
+    git \
     postgresql-dev; \
     curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer; \
     docker-php-ext-install bcmath pgsql pdo pdo_pgsql && \
@@ -18,6 +19,8 @@ COPY ./composer.* /app/
 COPY ./db/ /app/db/
 COPY ./phinx.yml.dist /app/
 COPY entrypoint.sh /
+
+WORKDIR /app 
 
 RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]

@@ -1,7 +1,7 @@
 <?php
 namespace FTCBotCoreTest\Discord\Model;
 
-use FTCBotCore\Discord\Model\GuildMember;
+use FTC\Discord\Model\GuildMember;
 use PHPUnit\Framework\TestCase;
 
 class GuildMemberTest extends TestCase

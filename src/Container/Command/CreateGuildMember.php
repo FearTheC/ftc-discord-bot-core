@@ -4,7 +4,7 @@ namespace FTCBotCore\Container\Command;
 
 use Psr\Container\ContainerInterface;
 use FTCBotCore\Command\CreateGuildMember as CreateGuildMemberInstance;
-use FTCBotCore\Discord\Model\GuildMemberRepository;
+use FTC\Discord\Model\GuildMemberRepository;
 
 class CreateGuildMember
 {

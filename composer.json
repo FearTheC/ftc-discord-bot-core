@@ -7,6 +7,12 @@
 			"email" : "quentin@bonaventure.xyz"
 		}
 	],
+	"repositories": [
+	    {
+        	"url": "https://github.com/QBonaventure/discord-model.git",
+        	"type": "git"
+	    }
+	],
 	"require" : {
 		"php-amqplib/php-amqplib" : "^2.7",
 		"guzzlehttp/guzzle" : "^6.3",
@@ -14,7 +20,8 @@
 		"prooph/service-bus": "^6.2",
 		"zendframework/zend-config-aggregator": "^1.1",
 		"cheprasov/php-redis-client": "^1.8",
-		"zendframework/zend-servicemanager": "^3.3"
+		"zendframework/zend-servicemanager": "^3.3",
+		"qbonaventure/discord-model": "dev-master"
 	},
 	"require-dev" : {
 		"phpunit/phpunit" : "^7.1"
@@ -23,5 +30,6 @@
 		"psr-4" : {
 			"FTCBotCore\\" : "src"
 		}
-	}
+	},
+	"minimum-stability": "dev"
 }

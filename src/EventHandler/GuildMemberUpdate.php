@@ -4,7 +4,7 @@ namespace FTCBotCore\EventHandler;
 
 
 use FTCBotCore\Db\DbCacheInterface;
-use FTCBotCore\Discord\Message\GuildMemberUpdate as GuildMemberUpdateMessage;
+use FTC\Discord\Message\GuildMemberUpdate as GuildMemberUpdateMessage;
 
 class GuildMemberUpdate 
 {

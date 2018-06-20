@@ -4,7 +4,7 @@ namespace FTCBotCore\EventHandler;
 
 
 use FTCBotCore\Db\DbCacheInterface;
-use FTCBotCore\Discord\Message\PresenceUpdate as PresenceUpdateMessage;
+use FTC\Discord\Message\PresenceUpdate as PresenceUpdateMessage;
 
 class PresenceUpdate 
 {

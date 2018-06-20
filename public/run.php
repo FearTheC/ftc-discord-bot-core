@@ -4,7 +4,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 use FTCBotCore\Broker\BrokerClient;
-use FTCBotCore\Discord\Message;
+use FTC\Discord\Message;
 
 chdir(dirname(__DIR__));
 require 'vendor/autoload.php';

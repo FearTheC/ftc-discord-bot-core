@@ -2,7 +2,7 @@
 namespace FTCBotCoreTest\Discord\Message;
 
 use PHPUnit\Framework\TestCase;
-use FTCBotCore\Discord\Message\GuildCreate;
+use FTC\Discord\Message\GuildCreate;
 
 final class GuildCreateTest extends TestCase
 {

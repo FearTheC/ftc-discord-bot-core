@@ -2,8 +2,8 @@
 
 namespace FTCBotCore\EventHandler;
 
-use FTCBotCore\Discord\Message;
-use FTCBotCore\Discord\Message\GuildCreate as GuildCreateMessage;
+use FTC\Discord\Message;
+use FTC\Discord\Message\GuildCreate as GuildCreateMessage;
 use FTCBotCore\Command\Dispatcher as CommandDispatcher;
 
 class GuildCreate 

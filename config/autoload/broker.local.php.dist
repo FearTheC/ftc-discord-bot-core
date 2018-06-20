@@ -11,7 +11,7 @@ return [
             \FTCBotCore\Broker\BrokerClient::class => \FTCBotCore\Container\Broker\AMQPClientFactory::class,
         ],
         'invokables' => [
-            'EventMessageFactory' => \FTCBotCore\Discord\MessageFactory::class,
+            'EventMessageFactory' => \FTC\Discord\MessageFactory::class,
         ],
     ],
 ];

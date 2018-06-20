@@ -3,8 +3,8 @@ namespace FTCBotCoreTest\Discord\Message;
 
 use PHPUnit\Framework\TestCase;
 use FTCBotCore\Command\CountMembers;
-use FTCBotCore\Discord\Message\MessageCreate;
-use FTCBotCore\Discord\Model\GuildMemberRepository;
+use FTC\Discord\Message\MessageCreate;
+use FTC\Discord\Model\GuildMemberRepository;
 use FTCBotCore\Command\CreateGuildMember;
 
 final class CreateGuildMemberTest extends TestCase

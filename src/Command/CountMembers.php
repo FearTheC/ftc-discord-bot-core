@@ -1,7 +1,7 @@
 <?php
 namespace FTCBotCore\Command;
 
-use FTCBotCore\Discord\Message\MessageCreate;
+use FTC\Discord\Message\MessageCreate;
 use FTCBotCore\Discord\Client;
 
 class CountMembers

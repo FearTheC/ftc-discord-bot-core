@@ -2,8 +2,8 @@
 namespace FTCBotCore\Discord\Repository;
 
 
-use FTCBotCore\Discord\Model\GuildRepository as RepositoryInterface;
-use FTCBotCore\Discord\Model\Guild;
+use FTC\Discord\Model\GuildRepository as RepositoryInterface;
+use FTC\Discord\Model\Guild;
 
 class GuildRepository extends PostgresqlRepository implements RepositoryInterface
 {

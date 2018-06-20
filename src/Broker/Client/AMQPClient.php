@@ -5,8 +5,8 @@ use FTCBotCore\Broker\BrokerClient;
 use PhpAmqpLib\Connection\AMQPStreamConnection;
 use PhpAmqpLib\Channel\AMQPChannel;
 use PhpAmqpLib\Message\AMQPMessage;
-use FTCBotCore\Discord\Message;
-use FTCBotCore\Discord\MessageFactory;
+use FTC\Discord\Message;
+use FTC\Discord\MessageFactory;
 
 class AMQPClient implements BrokerClient
 {

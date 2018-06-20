@@ -2,9 +2,9 @@
 
 namespace FTCBotCore\EventHandler;
 
-use FTCBotCore\Discord\Message;
-use FTCBotCore\Discord\Model\GuildMemberRepository;
-use FTCBotCore\Discord\Model\GuildMember;
+use FTC\Discord\Message;
+use FTC\Discord\Model\GuildMemberRepository;
+use FTC\Discord\Model\GuildMember;
 
 class GuildMemberAdd 
 {

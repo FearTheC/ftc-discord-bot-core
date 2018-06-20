@@ -3,7 +3,7 @@ namespace FTCBotCoreTest\Discord\Message;
 
 use PHPUnit\Framework\TestCase;
 use FTCBotCore\Command\CountMembers;
-use FTCBotCore\Discord\Message\MessageCreate;
+use FTC\Discord\Message\MessageCreate;
 
 final class CountMembersTest extends TestCase
 {

@@ -2,11 +2,11 @@
 namespace FTCBotCore\Command;
 
 
-use FTCBotCore\Discord\Model\GuildMemberRepository;
-use FTCBotCore\Discord\Message;
+use FTC\Discord\Model\GuildMemberRepository;
+use FTC\Discord\Message;
 use FTCBotCore\Discord\Client;
-use FTCBotCore\Discord\Model\GuildRoleRepository;
-use FTCBotCore\Discord\Message\MessageCreate;
+use FTC\Discord\Model\GuildRoleRepository;
+use FTC\Discord\Message\MessageCreate;
 use FTCBotCore\EventHandler\EventHandler;
 
 class AddMemberRole extends EventHandler
