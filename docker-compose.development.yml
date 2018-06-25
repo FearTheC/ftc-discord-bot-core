@@ -1,0 +1,51 @@
+version: '3'
+  
+services:
+  core:
+#    image: discord-bot-core
+    build:
+      context: .
+      dockerfile: Dockerfile
+    tty: true
+    restart: always
+    env_file:
+      - .env
+    volumes:
+      - .:/app/
+    external_links:
+      - broker
+    networks:
+      ftcbot_dev:
+      
+  core-db:
+    image: postgres:10-alpine
+    expose:
+      - "5432"
+    environment:
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: discord_bot
+    volumes:
+      - core_db:/var/lib/postgresql/data:z
+    networks:
+      ftcbot_dev:
+        aliases:
+          - core-db
+      
+  core-cache:
+    image: redis:alpine
+    expose:
+      - "6379"
+    volumes:
+      - core_cache:/data:z
+    networks:
+      ftcbot_dev:
+      
+volumes:
+  core_db:
+  core_cache:
+  redis_data:
+      
+networks:
+  ftcbot_dev:
+    external: true
+ 

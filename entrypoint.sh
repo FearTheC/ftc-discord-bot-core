@@ -1,7 +1,7 @@
 #!/bin/sh
 
 USER_ID=${LOCAL_USER_ID:-9001}
-cd /app && composer install --no-dev
+cd /app && composer update
 
 cp /app/config/autoload/bot.local.php.dist /app/config/autoload/bot.local.php
 cp /app/config/autoload/broker.local.php.dist /app/config/autoload/broker.local.php

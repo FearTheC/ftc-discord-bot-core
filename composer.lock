@@ -139,12 +139,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "b4e2ffb457f37d629a6ec9b72fd0d9c85f3dfe2c"
+                "reference": "003757426cdd50fbad1c34cdbcc8a55f70a4fe8b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/b4e2ffb457f37d629a6ec9b72fd0d9c85f3dfe2c",
-                "reference": "b4e2ffb457f37d629a6ec9b72fd0d9c85f3dfe2c",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/003757426cdd50fbad1c34cdbcc8a55f70a4fe8b",
+                "reference": "003757426cdd50fbad1c34cdbcc8a55f70a4fe8b",
                 "shasum": ""
             },
             "require": {
@@ -196,7 +196,7 @@
                 "rest",
                 "web service"
             ],
-            "time": "2018-06-14T22:09:16+00:00"
+            "time": "2018-06-23T21:34:47+00:00"
         },
         {
             "name": "guzzlehttp/promises",
@@ -669,12 +669,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/QBonaventure/discord-db-postgresql.git",
-                "reference": "499eaa0637137bac344988163a7918b0d995471b"
+                "reference": "7588d41f4ebb8b9b105f3cde6abbf2aed7c421e4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/QBonaventure/discord-db-postgresql/zipball/499eaa0637137bac344988163a7918b0d995471b",
-                "reference": "499eaa0637137bac344988163a7918b0d995471b",
+                "url": "https://api.github.com/repos/QBonaventure/discord-db-postgresql/zipball/7588d41f4ebb8b9b105f3cde6abbf2aed7c421e4",
+                "reference": "7588d41f4ebb8b9b105f3cde6abbf2aed7c421e4",
                 "shasum": ""
             },
             "require": {
@@ -699,7 +699,7 @@
                 "source": "https://github.com/QBonaventure/discord-db-postgresql/tree/master",
                 "issues": "https://github.com/QBonaventure/discord-db-postgresql/issues"
             },
-            "time": "2018-06-20T12:37:50+00:00"
+            "time": "2018-06-21T13:18:58+00:00"
         },
         {
             "name": "qbonaventure/discord-model",
@@ -707,12 +707,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/QBonaventure/discord-model.git",
-                "reference": "cc9b168f0bb98e57e26a92a061de6ed0f467c3b6"
+                "reference": "6716ba8cc609ba8c7cc944666c1720371389010e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/QBonaventure/discord-model/zipball/cc9b168f0bb98e57e26a92a061de6ed0f467c3b6",
-                "reference": "cc9b168f0bb98e57e26a92a061de6ed0f467c3b6",
+                "url": "https://api.github.com/repos/QBonaventure/discord-model/zipball/6716ba8cc609ba8c7cc944666c1720371389010e",
+                "reference": "6716ba8cc609ba8c7cc944666c1720371389010e",
                 "shasum": ""
             },
             "require-dev": {
@@ -734,7 +734,7 @@
                     "email": "quentin@bonaventure.xyz"
                 }
             ],
-            "time": "2018-06-20T12:33:32+00:00"
+            "time": "2018-06-25T14:18:19+00:00"
         },
         {
             "name": "ralouphie/getallheaders",
@@ -1564,18 +1564,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phar-io/manifest.git",
-                "reference": "014feadb268809af7c8e2f7ccd396b8494901f58"
+                "reference": "29654cc208939d684071d5725dd1ad1f3e5d1733"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phar-io/manifest/zipball/014feadb268809af7c8e2f7ccd396b8494901f58",
-                "reference": "014feadb268809af7c8e2f7ccd396b8494901f58",
+                "url": "https://api.github.com/repos/phar-io/manifest/zipball/29654cc208939d684071d5725dd1ad1f3e5d1733",
+                "reference": "29654cc208939d684071d5725dd1ad1f3e5d1733",
                 "shasum": ""
             },
             "require": {
                 "ext-dom": "*",
                 "ext-phar": "*",
-                "phar-io/version": "^1.0.1",
+                "phar-io/version": "2.0.0",
                 "php": "^5.6 || ^7.0"
             },
             "type": "library",
@@ -1611,20 +1611,20 @@
                 }
             ],
             "description": "Component for reading phar.io manifest information from a PHP Archive (PHAR)",
-            "time": "2017-04-07T07:07:10+00:00"
+            "time": "2018-06-23T10:38:44+00:00"
         },
         {
             "name": "phar-io/version",
-            "version": "1.0.1",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phar-io/version.git",
-                "reference": "a70c0ced4be299a63d32fa96d9281d03e94041df"
+                "reference": "872340c7caa93bc4a2ce20d267498f8e578c856b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phar-io/version/zipball/a70c0ced4be299a63d32fa96d9281d03e94041df",
-                "reference": "a70c0ced4be299a63d32fa96d9281d03e94041df",
+                "url": "https://api.github.com/repos/phar-io/version/zipball/872340c7caa93bc4a2ce20d267498f8e578c856b",
+                "reference": "872340c7caa93bc4a2ce20d267498f8e578c856b",
                 "shasum": ""
             },
             "require": {
@@ -1658,7 +1658,7 @@
                 }
             ],
             "description": "Library for handling version information and constraints",
-            "time": "2017-03-05T17:38:23+00:00"
+            "time": "2018-06-23T10:30:07+00:00"
         },
         {
             "name": "phpdocumentor/reflection-common",
@@ -2130,12 +2130,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "ef4c3474b1b4042a4cb61b3dcdaae080f6a082bf"
+                "reference": "2e9ab306fa38423ecd977bb78623bc863083d547"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/ef4c3474b1b4042a4cb61b3dcdaae080f6a082bf",
-                "reference": "ef4c3474b1b4042a4cb61b3dcdaae080f6a082bf",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/2e9ab306fa38423ecd977bb78623bc863083d547",
+                "reference": "2e9ab306fa38423ecd977bb78623bc863083d547",
                 "shasum": ""
             },
             "require": {
@@ -2146,8 +2146,8 @@
                 "ext-mbstring": "*",
                 "ext-xml": "*",
                 "myclabs/deep-copy": "^1.7",
-                "phar-io/manifest": "^1.0.1",
-                "phar-io/version": "^1.0",
+                "phar-io/manifest": "^1.0.2",
+                "phar-io/version": "^2.0",
                 "php": "^7.1",
                 "phpspec/prophecy": "^1.7",
                 "phpunit/php-code-coverage": "^6.0.7",
@@ -2206,7 +2206,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2018-06-18T16:58:43+00:00"
+            "time": "2018-06-24T21:05:00+00:00"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",
