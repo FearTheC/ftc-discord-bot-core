@@ -11,7 +11,6 @@ use FTC\Discord\Model\ValueObject\Snowflake\CategoryId;
 use FTC\Discord\Model\ValueObject\Text\ChannelTopic;
 use FTC\Discord\Model\Channel\GuildChannel\TextChannel;
 use FTC\Discord\Model\Channel\GuildChannel\Voice;
-use phpDocumentor\Reflection\Types\Integer;
 use FTC\Discord\Model\Collection\PermissionOverwriteCollection;
 use FTC\Discord\Model\Channel\GuildChannel\Category;
 
