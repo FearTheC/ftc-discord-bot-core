@@ -16,8 +16,8 @@ class CreateUsersRoles extends AbstractMigration
         $table = $this->table('users_roles', $options);
         $table->addColumn('user_id', 'biginteger');
         $table->addColumn('role_id', 'biginteger');
-        $table->addForeignKey('user_id', 'users');
-        $table->addForeignKey('role_id', 'guilds_roles');
+        $table->addForeignKey('user_id', 'users', 'id', ['delete' => 'cascade', 'update' => 'cascade']);
+        $table->addForeignKey('role_id', 'guilds_roles', 'id', ['delete' => 'cascade', 'update' => 'cascade']);
         $table->create();
     }
     

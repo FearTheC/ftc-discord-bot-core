@@ -2,7 +2,7 @@
 
 namespace FTCBotCore\EventHandler;
 
-use FTC\Discord\Message;
+use FTCBotCore\Message\Message;
 use FTC\Discord\Model\GuildMemberRepository;
 use FTC\Discord\Model\GuildMember;
 

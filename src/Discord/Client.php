@@ -2,7 +2,7 @@
 namespace FTCBotCore\Discord;
 
 use GuzzleHttp\Client as HttpClient;
-use FTC\Discord\Message\MessageCreate;
+use FTCBotCore\Message\MessageCreate;
 
 class Client extends HttpClient
 {

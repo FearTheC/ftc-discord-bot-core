@@ -36,4 +36,4 @@ sed -i "s/name:/name: $FTCBOT_DB_DBNAME/g" /app/phinx.yml
 vendor/bin/phinx migrate -v
 
 
-exec php /app/public/run.php
+exec "$@"

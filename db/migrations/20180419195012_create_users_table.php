@@ -16,6 +16,9 @@ class CreateUsersTable extends AbstractMigration
         $table = $this->table('users', $options);
         $table->addColumn('id', 'biginteger');
         $table->addColumn('username', 'text');
+        $table->addColumn('tag', 'text');
+        $table->addColumn('email', 'text', ['null' => true]);
+        $table->addColumn('is_bot', 'boolean');
         $table->create();
     }
     

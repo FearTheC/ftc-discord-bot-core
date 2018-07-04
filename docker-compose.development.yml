@@ -16,6 +16,7 @@ services:
       - broker
     networks:
       ftcbot_dev:
+    command: sh
       
   core-db:
     image: postgres:10-alpine

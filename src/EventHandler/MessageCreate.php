@@ -4,7 +4,7 @@ namespace FTCBotCore\EventHandler;
 
 use GuzzleHttp\ClientInterface;
 use FTCBotCore\Command\Dispatcher;
-use FTC\Discord\Message;
+use FTCBotCore\Message\Message;
 
 class MessageCreate 
 {

@@ -5,16 +5,18 @@ use Psr\Container\ContainerInterface;
 use FTCBotCore\EventHandler\GuildCreate as GuildCreateInstance;
 use FTC\Discord\Db\Core;
 use FTCBotCore\Command\Dispatcher;
+use FTC\Discord\Model\GuildRepository;
+use FTC\Discord\Model\UserRepository;
 
 class GuildCreate
 {
     
     public function __invoke(ContainerInterface $container, $requestedName)
     {
-        $database = $container->get(Core::class);
-        $dispatcher = $container->get(Dispatcher::class);
+        $guildRepository = $container->get(GuildRepository::class);
+        $userRepository = $container->get(UserRepository::class);
 
-        return new GuildCreateInstance($database, $dispatcher);
+        return new GuildCreateInstance($guildRepository, $userRepository);
     }
     
 }

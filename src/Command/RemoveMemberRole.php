@@ -1,7 +1,7 @@
 <?php
 namespace FTCBotCore\Command;
 
-use FTC\Discord\Message\MessageCreate;
+use FTCBotCore\Message\MessageCreate;
 
 class RemoveMemberRole
 {

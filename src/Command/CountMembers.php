@@ -1,7 +1,7 @@
 <?php
 namespace FTCBotCore\Command;
 
-use FTC\Discord\Message\MessageCreate;
+use FTCBotCore\Message\MessageCreate;
 use FTCBotCore\Discord\Client;
 
 class CountMembers
@@ -36,7 +36,7 @@ class CountMembers
         }
 
         $results = 'Hey <@'.$msg->getAuthorId().'>!'.PHP_EOL.$results;
-        $this->discordClient->deleteMessage($msg);
+//         $this->discordClient->deleteMessage($msg);
         $this->discordClient->answer($results, $msg->getChannelId());
     }
     

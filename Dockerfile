@@ -25,5 +25,5 @@ WORKDIR /app
 RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
 
-#CMD ["php", "public/run.php"]
+CMD ["php", "public/run.php"]
 #CMD ["php", "public/run.php"]

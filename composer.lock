@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3b8ea64ea242fc272a7d0c8fc2cc93e5",
+    "content-hash": "cf6e5ebf821e6e633b75cb05d9eb362f",
     "packages": [
         {
             "name": "beberlei/assert",
@@ -139,12 +139,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "003757426cdd50fbad1c34cdbcc8a55f70a4fe8b"
+                "reference": "7bc46be28e4b01b96d0dfda8c58169072e626558"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/003757426cdd50fbad1c34cdbcc8a55f70a4fe8b",
-                "reference": "003757426cdd50fbad1c34cdbcc8a55f70a4fe8b",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/7bc46be28e4b01b96d0dfda8c58169072e626558",
+                "reference": "7bc46be28e4b01b96d0dfda8c58169072e626558",
                 "shasum": ""
             },
             "require": {
@@ -196,7 +196,7 @@
                 "rest",
                 "web service"
             ],
-            "time": "2018-06-23T21:34:47+00:00"
+            "time": "2018-06-25T23:51:40+00:00"
         },
         {
             "name": "guzzlehttp/promises",
@@ -317,23 +317,24 @@
         },
         {
             "name": "paragonie/random_compat",
-            "version": "v2.0.15",
+            "version": "v9.99.99",
             "source": {
                 "type": "git",
                 "url": "https://github.com/paragonie/random_compat.git",
-                "reference": "10bcb46e8f3d365170f6de9d05245aa066b81f09"
+                "reference": "84b4dfb120c6f9b4ff7b3685f9b8f1aa365a0c95"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/10bcb46e8f3d365170f6de9d05245aa066b81f09",
-                "reference": "10bcb46e8f3d365170f6de9d05245aa066b81f09",
+                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/84b4dfb120c6f9b4ff7b3685f9b8f1aa365a0c95",
+                "reference": "84b4dfb120c6f9b4ff7b3685f9b8f1aa365a0c95",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.2.0"
+                "php": "^7"
             },
             "require-dev": {
-                "phpunit/phpunit": "4.*|5.*"
+                "phpunit/phpunit": "4.*|5.*",
+                "vimeo/psalm": "^1"
             },
             "suggest": {
                 "ext-libsodium": "Provides a modern crypto API that can be used to generate random bytes."
@@ -362,7 +363,7 @@
                 "pseudorandom",
                 "random"
             ],
-            "time": "2018-06-08T15:26:40+00:00"
+            "time": "2018-06-06T17:16:32+00:00"
         },
         {
             "name": "php-amqplib/php-amqplib",
@@ -669,12 +670,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/QBonaventure/discord-db-postgresql.git",
-                "reference": "7588d41f4ebb8b9b105f3cde6abbf2aed7c421e4"
+                "reference": "2e458fc91be0a926429d954e1a44943e400a1839"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/QBonaventure/discord-db-postgresql/zipball/7588d41f4ebb8b9b105f3cde6abbf2aed7c421e4",
-                "reference": "7588d41f4ebb8b9b105f3cde6abbf2aed7c421e4",
+                "url": "https://api.github.com/repos/QBonaventure/discord-db-postgresql/zipball/2e458fc91be0a926429d954e1a44943e400a1839",
+                "reference": "2e458fc91be0a926429d954e1a44943e400a1839",
                 "shasum": ""
             },
             "require": {
@@ -684,44 +685,6 @@
             "autoload": {
                 "psr-4": {
                     "FTC\\Discord\\Db\\Postgresql\\": "src"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Quentin Bonaventure",
-                    "email": "quentin@bonaventure.xyz"
-                }
-            ],
-            "support": {
-                "source": "https://github.com/QBonaventure/discord-db-postgresql/tree/master",
-                "issues": "https://github.com/QBonaventure/discord-db-postgresql/issues"
-            },
-            "time": "2018-06-21T13:18:58+00:00"
-        },
-        {
-            "name": "qbonaventure/discord-model",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/QBonaventure/discord-model.git",
-                "reference": "6716ba8cc609ba8c7cc944666c1720371389010e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/QBonaventure/discord-model/zipball/6716ba8cc609ba8c7cc944666c1720371389010e",
-                "reference": "6716ba8cc609ba8c7cc944666c1720371389010e",
-                "shasum": ""
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^7.1"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "FTC\\Discord\\": "src"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -734,7 +697,44 @@
                     "email": "quentin@bonaventure.xyz"
                 }
             ],
-            "time": "2018-06-25T14:18:19+00:00"
+            "time": "2018-07-03T14:35:03+00:00"
+        },
+        {
+            "name": "qbonaventure/discord-model",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/QBonaventure/discord-model.git",
+                "reference": "46938b701b0899d3385c2e15ebf23128f7493475"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/QBonaventure/discord-model/zipball/46938b701b0899d3385c2e15ebf23128f7493475",
+                "reference": "46938b701b0899d3385c2e15ebf23128f7493475",
+                "shasum": ""
+            },
+            "require-dev": {
+                "league/container": "^2.4",
+                "phpunit/phpunit": "^7.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "FTC\\Discord\\": "src",
+                    "FTC\\Discord\\Test\\": "tests"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Quentin Bonaventure",
+                    "email": "quentin@bonaventure.xyz"
+                }
+            ],
+            "time": "2018-07-04T06:37:13+00:00"
         },
         {
             "name": "ralouphie/getallheaders",
@@ -782,17 +782,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ramsey/uuid.git",
-                "reference": "29fb62b48611761b4c0c4e8f4a428cad19c2b690"
+                "reference": "8a8b1c0d2a048740ce7b4e5f661306af327c0d90"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ramsey/uuid/zipball/29fb62b48611761b4c0c4e8f4a428cad19c2b690",
-                "reference": "29fb62b48611761b4c0c4e8f4a428cad19c2b690",
+                "url": "https://api.github.com/repos/ramsey/uuid/zipball/8a8b1c0d2a048740ce7b4e5f661306af327c0d90",
+                "reference": "8a8b1c0d2a048740ce7b4e5f661306af327c0d90",
                 "shasum": ""
             },
             "require": {
-                "paragonie/random_compat": "^1.0|^2.0",
-                "php": "^5.4 || ^7.0"
+                "paragonie/random_compat": "^1.0|^2.0|9.99.99",
+                "php": "^5.4 || ^7.0",
+                "symfony/polyfill-ctype": "^1.8"
             },
             "replace": {
                 "rhumsaa/uuid": "self.version"
@@ -854,7 +855,7 @@
                 "identifier",
                 "uuid"
             ],
-            "time": "2018-04-25T19:14:32+00:00"
+            "time": "2018-07-02T01:36:14+00:00"
         },
         {
             "name": "robmorgan/phinx",
@@ -933,12 +934,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/config.git",
-                "reference": "6a92d96bb4edf5293627b0ce4b155f3de68a920a"
+                "reference": "5d1d799de46fb2f1c5903dae5ded9df8cc991dc8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/config/zipball/6a92d96bb4edf5293627b0ce4b155f3de68a920a",
-                "reference": "6a92d96bb4edf5293627b0ce4b155f3de68a920a",
+                "url": "https://api.github.com/repos/symfony/config/zipball/5d1d799de46fb2f1c5903dae5ded9df8cc991dc8",
+                "reference": "5d1d799de46fb2f1c5903dae5ded9df8cc991dc8",
                 "shasum": ""
             },
             "require": {
@@ -988,7 +989,7 @@
             ],
             "description": "Symfony Config Component",
             "homepage": "https://symfony.com",
-            "time": "2018-06-20T11:16:05+00:00"
+            "time": "2018-06-25T17:06:32+00:00"
         },
         {
             "name": "symfony/console",
@@ -996,12 +997,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "ac3d14fa82aad7ab067ecc84e0e1a4d01789cc76"
+                "reference": "2e1a74a3cbc9dd11a8be75d48948b052852d5ede"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/ac3d14fa82aad7ab067ecc84e0e1a4d01789cc76",
-                "reference": "ac3d14fa82aad7ab067ecc84e0e1a4d01789cc76",
+                "url": "https://api.github.com/repos/symfony/console/zipball/2e1a74a3cbc9dd11a8be75d48948b052852d5ede",
+                "reference": "2e1a74a3cbc9dd11a8be75d48948b052852d5ede",
                 "shasum": ""
             },
             "require": {
@@ -1056,7 +1057,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2018-05-31T10:18:23+00:00"
+            "time": "2018-07-03T18:14:13+00:00"
         },
         {
             "name": "symfony/filesystem",
@@ -2130,12 +2131,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "2e9ab306fa38423ecd977bb78623bc863083d547"
+                "reference": "7362c905f185d3b9274a9b4815bf3c205c64e974"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/2e9ab306fa38423ecd977bb78623bc863083d547",
-                "reference": "2e9ab306fa38423ecd977bb78623bc863083d547",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/7362c905f185d3b9274a9b4815bf3c205c64e974",
+                "reference": "7362c905f185d3b9274a9b4815bf3c205c64e974",
                 "shasum": ""
             },
             "require": {
@@ -2206,7 +2207,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2018-06-24T21:05:00+00:00"
+            "time": "2018-07-04T05:43:34+00:00"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",
@@ -2429,12 +2430,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/exporter.git",
-                "reference": "20962714658cf74b1d293a98a30ec108e2e81ca9"
+                "reference": "c8c4f196e32858e4448bc285e542b61a4c40d9dc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/exporter/zipball/20962714658cf74b1d293a98a30ec108e2e81ca9",
-                "reference": "20962714658cf74b1d293a98a30ec108e2e81ca9",
+                "url": "https://api.github.com/repos/sebastianbergmann/exporter/zipball/c8c4f196e32858e4448bc285e542b61a4c40d9dc",
+                "reference": "c8c4f196e32858e4448bc285e542b61a4c40d9dc",
                 "shasum": ""
             },
             "require": {
@@ -2488,7 +2489,7 @@
                 "export",
                 "exporter"
             ],
-            "time": "2018-05-15T05:51:07+00:00"
+            "time": "2018-06-28T14:22:04+00:00"
         },
         {
             "name": "sebastian/global-state",

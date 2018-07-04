@@ -1,12 +1,13 @@
-<?php
+<?php declare(strict_types=1);
+
 namespace FTCBotCore\Broker\Client;
 
 use FTCBotCore\Broker\BrokerClient;
 use PhpAmqpLib\Connection\AMQPStreamConnection;
 use PhpAmqpLib\Channel\AMQPChannel;
 use PhpAmqpLib\Message\AMQPMessage;
-use FTC\Discord\Message;
-use FTC\Discord\MessageFactory;
+use FTCBotCore\Message\Message;
+use FTCBotCore\Message\MessageFactory;
 
 class AMQPClient implements BrokerClient
 {
