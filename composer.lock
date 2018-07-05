@@ -670,12 +670,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/QBonaventure/discord-db-postgresql.git",
-                "reference": "2e458fc91be0a926429d954e1a44943e400a1839"
+                "reference": "a772e9be521c0b4340b4751a0a6f722405553cc8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/QBonaventure/discord-db-postgresql/zipball/2e458fc91be0a926429d954e1a44943e400a1839",
-                "reference": "2e458fc91be0a926429d954e1a44943e400a1839",
+                "url": "https://api.github.com/repos/QBonaventure/discord-db-postgresql/zipball/a772e9be521c0b4340b4751a0a6f722405553cc8",
+                "reference": "a772e9be521c0b4340b4751a0a6f722405553cc8",
                 "shasum": ""
             },
             "require": {
@@ -697,7 +697,7 @@
                     "email": "quentin@bonaventure.xyz"
                 }
             ],
-            "time": "2018-07-03T14:35:03+00:00"
+            "time": "2018-07-05T10:01:01+00:00"
         },
         {
             "name": "qbonaventure/discord-model",
@@ -705,12 +705,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/QBonaventure/discord-model.git",
-                "reference": "46938b701b0899d3385c2e15ebf23128f7493475"
+                "reference": "efe634b498a079656627f0ce9d5b2a28ba6bf7d9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/QBonaventure/discord-model/zipball/46938b701b0899d3385c2e15ebf23128f7493475",
-                "reference": "46938b701b0899d3385c2e15ebf23128f7493475",
+                "url": "https://api.github.com/repos/QBonaventure/discord-model/zipball/efe634b498a079656627f0ce9d5b2a28ba6bf7d9",
+                "reference": "efe634b498a079656627f0ce9d5b2a28ba6bf7d9",
                 "shasum": ""
             },
             "require-dev": {
@@ -734,7 +734,7 @@
                     "email": "quentin@bonaventure.xyz"
                 }
             ],
-            "time": "2018-07-04T06:37:13+00:00"
+            "time": "2018-07-05T10:06:31+00:00"
         },
         {
             "name": "ralouphie/getallheaders",
@@ -2131,12 +2131,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "7362c905f185d3b9274a9b4815bf3c205c64e974"
+                "reference": "80a541f0844e90f13a9016c475eb19679002525b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/7362c905f185d3b9274a9b4815bf3c205c64e974",
-                "reference": "7362c905f185d3b9274a9b4815bf3c205c64e974",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/80a541f0844e90f13a9016c475eb19679002525b",
+                "reference": "80a541f0844e90f13a9016c475eb19679002525b",
                 "shasum": ""
             },
             "require": {
@@ -2207,7 +2207,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2018-07-04T05:43:34+00:00"
+            "time": "2018-07-05T03:56:20+00:00"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",

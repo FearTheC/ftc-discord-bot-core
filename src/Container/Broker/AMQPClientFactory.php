@@ -17,6 +17,17 @@ class AMQPClientFactory
             $config['port'],
             $config['username'],
             $config['password']
+//             ,
+//             '/',
+//             false,
+//             'AMQPLAIN',
+//             null,
+//             'en_US',
+//             10,
+//             30,
+//             null,
+//             true,
+//             15
         );
         $messageFactory = $container->get('EventMessageFactory');
         

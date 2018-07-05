@@ -4,13 +4,21 @@ namespace FTCBotCore\Discord\Message\Factory;
 
 use FTC\Discord\Model\GuildMember;
 use FTC\Discord\Model\ValueObject\Snowflake\UserId;
+use FTC\Discord\Model\ValueObject\Snowflake\RoleId;
 use FTC\Discord\Model\ValueObject\Name\NickName;
+use FTC\Discord\Model\Collection\GuildRoleIdCollection;
 
 class GuildMemberFactory
 {
     
     public function create($data) {
-        $rolesIds = $data['roles'];
+        $rolesIds = array_map(
+            function($value) {
+                return RoleId::create((int) $value);
+            },
+            $data['roles']
+        );
+        $roleIdsColl = new GuildRoleIdCollection(...$rolesIds);
         
         $nickname = null;
         if (isset($data['nick'])) {
@@ -18,7 +26,7 @@ class GuildMemberFactory
         }
         return GuildMember::create(
             UserId::create((int) $data['user']['id']),
-            $rolesIds,
+            $roleIdsColl,
             new \DateTime($data['joined_at']),
             $nickname
             );

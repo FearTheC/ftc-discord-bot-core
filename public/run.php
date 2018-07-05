@@ -5,6 +5,7 @@ error_reporting(E_ALL);
 
 use FTCBotCore\Broker\BrokerClient;
 use FTCBotCore\Message\Message;
+use FTCBotCore\Broker\Client\AMQPClient;
 
 chdir(dirname(__DIR__));
 require 'vendor/autoload.php';
@@ -23,18 +24,33 @@ register_shutdown_function('alertOwner', $sm->get('discord-http-client'), $botCo
 
 
 
-$brokerConfig = $sm->get('config')['broker'];
-while (($connection = fsockopen($brokerConfig['host'], $brokerConfig['port'])) === false) {
-    echo 'Waiting for broker service startup'.PHP_EOL;
-    sleep(1);
-}
-fclose($connection);
-echo 'Broker service started up'.PHP_EOL;
+$waitUponBrokerStart = function($sm) {
+    $brokerConfig = $sm->get('config')['broker'];
+    while (($connection = @fsockopen($brokerConfig['host'], $brokerConfig['port'])) === false) {
+        $wheel = ['-', '\\', '|', '/'];
+        if (!isset($string)) {
+            $string = 'Waiting for broker service startup  ';
+            echo $string;
+        } else {
+            foreach ($wheel as $char) {
+                printf("%c%s", 0x08, $char);
+                sleep(1);
+            }
+        }
+    }
+    echo PHP_EOL;
+    fclose($connection);
+    echo 'Broker service started up'.PHP_EOL;
+};
+
+$waitUponBrokerStart($sm);
 
 
+
+/**
+ * @var AMQPClient $broker
+ */
 $broker = $sm->get(BrokerClient::class);
-
-
 
 echo ' [*] Waiting for messages. To exit press CTRL+C', "\n";
 
@@ -47,11 +63,19 @@ $callback = function(Message $message) use ($sm) {
         if ($handler($message)) {
             return true;
         }
+        return false;
     }
 
     return true;
 };
 
-$broker->consume($callback);
 
-
+while(true) {
+    try {
+        $broker->consume($callback);
+    } catch (Exception $e) {
+        echo "CONNECTION WITH BROKER LOST ! Waiting for reconnecting\n";
+        $waitUponBrokerStart($sm);
+        $broker->reconnect();
+    }
+};

@@ -29,13 +29,13 @@ class GuildFactory
         
         $channelFactory = new AbstractChannelFactory();
         $channelArray = array_map([$channelFactory, 'create'], $data['channels']);
-        $channelCollection = new GuildChannelCollection(...$channelArray);
+        $channels = new GuildChannelCollection(...$channelArray);
         
         
         
         $guildId = GuildId::create((int) $data['id']);
         $ownerId = UserId::create((int) $data['owner_id']);
-        return  Guild::create($guildId, $name, $ownerId, $guildRoles, $members);
+        return  Guild::create($guildId, $name, $ownerId, $guildRoles, $members, $channels);
     }
     
 }

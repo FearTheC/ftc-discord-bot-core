@@ -38,6 +38,11 @@ class AMQPClient implements BrokerClient
      ) {
         $this->connection = $connection;
         $this->messageFactory = $messageFactory;
+        $this->openChannel();
+    }
+    
+    private function openChannel()
+    {
         $this->channel = $this->connection->channel();
         $this->channel->basic_qos(null, 1, null);
         $this->channel->queue_declare('hello', false, true, false, false);
@@ -59,6 +64,12 @@ class AMQPClient implements BrokerClient
         };
     }
     
+    public function reconnect()
+    {
+        $this->connection->reconnect();
+        $this->openChannel();
+    }
+    
     public function consume(\Closure $callback)
     {
         $this->setCallback($callback);
@@ -75,6 +86,11 @@ class AMQPClient implements BrokerClient
     {
         $messageTag = $message->delivery_info['delivery_tag'];
         $message->delivery_info['channel']->basic_ack($messageTag);
+    }
+    
+    public function getChannel()
+    {
+        return $this->channel;
     }
     
     public function closeChannel()
