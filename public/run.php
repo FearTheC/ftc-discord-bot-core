@@ -61,6 +61,7 @@ $callback = function(Message $message) use ($sm) {
         $handler = $sm->get($message->getEventType());
         
         if ($handler($message)) {
+            return false;
             return true;
         }
         return false;

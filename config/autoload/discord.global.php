@@ -15,8 +15,8 @@ return [
     'dependencies' => [
         'factories' => [
             'discord-http-client' => FTCBotCore\Container\Discord\HttpClient::class,
-            FTC\Discord\Model\GuildRepository::class =>
-                FTC\Discord\Db\Postgresql\Factory\GuildRepository::class,
+            FTC\Discord\Model\Aggregate\GuildRepository::class =>
+                FTC\Discord\Db\Postgresql\Container\GuildRepository::class,
             FTC\Discord\Model\UserRepository::class =>
                 FTC\Discord\Db\Postgresql\Factory\UserRepository::class,
             FTC\Discord\Model\GuildRoleRepository::class =>

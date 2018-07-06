@@ -4,12 +4,12 @@ namespace FTCBotCore\EventHandler;
 
 use FTCBotCore\Message\Message;
 use FTCBotCore\Message\GuildCreate as GuildCreateMessage;
-use FTC\Discord\Model\GuildRepository;
+use FTC\Discord\Model\Aggregate\GuildRepository;
 use FTC\Discord\Model\Guild;
-use FTCBotCore\Discord\Message\Factory\GuildFactory;
-use FTC\Discord\Model\UserRepository;
+use FTCBotCore\Discord\Model\Mapper\GuildFactory;
+use FTCBotCore\Discord\Model\Mapper\UserFactory;
 use FTC\Discord\Model\User;
-use FTCBotCore\Discord\Message\Factory\UserFactory;
+use FTC\Discord\Model\Aggregate\UserRepository;
 
 class GuildCreate 
 {

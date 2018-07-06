@@ -3,10 +3,8 @@ namespace FTCBotCore\Container\EventHandler;
 
 use Psr\Container\ContainerInterface;
 use FTCBotCore\EventHandler\GuildCreate as GuildCreateInstance;
-use FTC\Discord\Db\Core;
-use FTCBotCore\Command\Dispatcher;
-use FTC\Discord\Model\GuildRepository;
 use FTC\Discord\Model\UserRepository;
+use FTC\Discord\Model\Aggregate\GuildRepository;
 
 class GuildCreate
 {

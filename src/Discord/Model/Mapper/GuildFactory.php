@@ -1,15 +1,15 @@
 <?php declare(strict_types=1);
 
-namespace FTCBotCore\Discord\Message\Factory;
+namespace FTCBotCore\Discord\Model\Mapper;
 
 use FTCBotCore\Message\Message;
 use FTC\Discord\Model\Collection\GuildRoleCollection;
 use FTC\Discord\Model\Collection\GuildMemberCollection;
-use FTC\Discord\Model\Guild;
 use FTC\Discord\Model\ValueObject\Snowflake\GuildId;
 use FTC\Discord\Model\ValueObject\Snowflake\UserId;
 use FTC\Discord\Model\ValueObject\Name\GuildName;
 use FTC\Discord\Model\Collection\GuildChannelCollection;
+use FTC\Discord\Model\Aggregate\Guild;
 
 class GuildFactory
 {

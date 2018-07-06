@@ -1,9 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace FTCBotCore\Discord\Message\Factory;
+namespace FTCBotCore\Discord\Model\Mapper;
 
-use FTCBotCore\Message\Message;
-use FTC\Discord\Model\User;
+use FTC\Discord\Model\Aggregate\User;
 use FTC\Discord\Model\ValueObject\Snowflake\UserId;
 use FTC\Discord\Model\ValueObject\Name\UserName;
 use FTC\Discord\Model\ValueObject\DiscordTag;

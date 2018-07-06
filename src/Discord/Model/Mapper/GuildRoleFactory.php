@@ -1,9 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace FTCBotCore\Discord\Message\Factory;
+namespace FTCBotCore\Discord\Model\Mapper;
 
-use FTC\Discord\Message;
-use FTC\Discord\Model\GuildRole;
+use FTC\Discord\Model\Aggregate\GuildRole;
 use FTC\Discord\Model\ValueObject\Snowflake\RoleId;
 use FTC\Discord\Model\ValueObject\Name\RoleName;
 use FTC\Discord\Model\ValueObject\Permission;

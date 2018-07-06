@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace FTCBotCore\Discord\Message\Factory;
+namespace FTCBotCore\Discord\Model\Mapper;
 
-use FTC\Discord\Model\Channel;
+use FTC\Discord\Model\Aggregate\GuildChannel;
 use FTC\Discord\Model\ValueObject\Snowflake\ChannelId;
 use FTC\Discord\Model\ValueObject\Name\ChannelName;
 use FTC\Discord\Model\ValueObject\PermissionOverwrite;
@@ -18,14 +18,14 @@ class AbstractChannelFactory
 {
     
     private $typeMethods = [
-        Channel::GUILD_TEXT => 'createGuildTextChannel',
-        Channel::GUILD_VOICE => 'createGuildVoiceChannel',
-        Channel::GUILD_CATEGORY => 'createGuildCategoryChannel',
-        Channel::DM => 'createDMChannel',
-        Channel::GROUP_DM => 'createGroupDMChannel',
+        GuildChannel::GUILD_TEXT => 'createGuildTextChannel',
+        GuildChannel::GUILD_VOICE => 'createGuildVoiceChannel',
+        GuildChannel::GUILD_CATEGORY => 'createGuildCategoryChannel',
+        GuildChannel::DM => 'createDMChannel',
+        GuildChannel::GROUP_DM => 'createGroupDMChannel',
     ];
     
-    public function create($data) : Channel
+    public function create($data) : GuildChannel
     {
         $b = $this->{$this->typeMethods[$data['type']]}($data);
         
