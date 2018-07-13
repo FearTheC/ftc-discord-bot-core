@@ -3,36 +3,44 @@ namespace FTCBotCore\Command;
 
 use FTCBotCore\Message\MessageCreate;
 use FTCBotCore\Discord\Client;
+use FTC\Discord\Model\Aggregate\GuildMemberRepository;
+use FTC\Discord\Model\ValueObject\Snowflake\GuildId;
+use FTC\Discord\Model\Aggregate\GuildRoleRepository;
 
 class CountMembers
 {
     
-    const SELECT_QUERY = "SELECT DISTINCT r.name, count(users.id) FROM users
-        JOIN users_roles roles on roles.user_id = users.id
-        JOIN guilds_roles r ON r.id = roles.role_id AND r.guild_id = :guild_id AND r.name IN (%s)
-        GROUP BY (r.name);";
-    const SELECT_GUILD_ROLES = "SELECT name FROM guilds_roles where guild_id = :guild_id and name <> '@everyone'";
-    
-    private $database;
+    /**
+     * @var GuildMemberRepository $guildMemberRepository
+     */
+    private $guildMemberRepository;
     
     /**
-     * @var Client
+     * @var GuildRoleRepository $guildRoleRepository
+     */
+    private $guildRoleRepository;
+    
+    /**
+     * @var Client $discordClient
      */
     private $discordClient;
     
-    public function __construct(\PDO $database, Client $discordClient)
+    public function __construct(GuildMemberRepository $guildMemberRepository, GuildRoleRepository $guildRoleRepository, Client $discordClient)
     {
-        $this->database = $database;
+        $this->guildMemberRepository = $guildMemberRepository;
+        $this->guildRoleRepository = $guildRoleRepository;
         $this->discordClient = $discordClient;
     }
     
     public function __invoke(MessageCreate $msg)
     {
-        $args = array_slice(explode(' ', $msg->getContent()), 1);
-        if ($args) {
-            $results = $this->getRoleCount($msg->getGuildId(), $args);
+        $requestedRoles = $this->getRolesInArgs($msg);
+        $guildId= GuildId::create($msg->getGuildId());
+
+        if ($requestedRoles) {
+            $results = $this->getRoleCount($guildId, $requestedRoles);
         } else {
-            $results = $this->getAvailableRoleArgs($msg->getGuildId());
+            $results = $this->getAvailableRoleArgs($guildId);
         }
 
         $results = 'Hey <@'.$msg->getAuthorId().'>!'.PHP_EOL.$results;
@@ -40,18 +48,21 @@ class CountMembers
         $this->discordClient->answer($results, $msg->getChannelId());
     }
     
-    private function getRoleCount(int $guildId, array $args)
+    private function getRolesInArgs(MessageCreate $msg)
+    {
+        $argsString = strstr($msg->getContent(), ' ');
+        $args = array_map('trim', explode(',', $argsString));
+        return $args;
+    }
+    
+    private function getRoleCount(GuildId $guildId, array $args)
     {
         $roles = $args;
         foreach ($args as $key => $arg) {
             $args[$key] = "'".$arg."'";
         }
         
-        $query = sprintf(self::SELECT_QUERY, implode(', ', $args));
-        $query = $this->database->prepare($query);
-        $query->bindParam(':guild_id', $guildId, \PDO::PARAM_STR);
-        $query->execute();
-        $results = $query->fetchAll(\PDO::FETCH_NAMED);
+        $results = $this->guildMemberRepository->countByRole($guildId, $args);
         
         $str = '';
         foreach ($results as $row) {
@@ -68,14 +79,9 @@ class CountMembers
         return $str;
     }
     
-    private function getAvailableRoleArgs(int $guildId)
+    private function getAvailableRoleArgs(GuildId $guildId)
     {
-        
-        $query = $this->database->prepare(self::SELECT_GUILD_ROLES);
-        $query->bindParam(':guild_id', $guildId, \PDO::PARAM_STR);
-        $query->execute();
-        
-        $results = $query->fetchAll(\PDO::FETCH_COLUMN);
+        $results = $this->guildRoleRepository->getAvalaibleRoles($guildId);
         $str = 'Please select at least one of the following roles : '.implode(', ', $results);
         
         return $str;

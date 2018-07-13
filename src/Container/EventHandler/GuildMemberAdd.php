@@ -3,7 +3,7 @@ namespace FTCBotCore\Container\EventHandler;
 
 use Psr\Container\ContainerInterface;
 use FTCBotCore\EventHandler\GuildMemberAdd as GuildMemberAddInstance;
-use FTC\Discord\Model\GuildMemberRepository;
+use FTC\Discord\Model\Aggregate\GuildMemberRepository;
 
 class GuildMemberAdd
 {

@@ -3,18 +3,18 @@ namespace FTCBotCore\Container\EventHandler;
 
 use Psr\Container\ContainerInterface;
 use FTCBotCore\EventHandler\GuildCreate as GuildCreateInstance;
-use FTC\Discord\Model\UserRepository;
-use FTC\Discord\Model\Aggregate\GuildRepository;
+use FTC\Discord\Model\Service\GuildCreation;
+use FTC\Discord\Model\Aggregate\UserRepository;
 
 class GuildCreate
 {
     
     public function __invoke(ContainerInterface $container, $requestedName)
     {
-        $guildRepository = $container->get(GuildRepository::class);
+        $guildCreationService = $container->get(GuildCreation::class);
         $userRepository = $container->get(UserRepository::class);
 
-        return new GuildCreateInstance($guildRepository, $userRepository);
+        return new GuildCreateInstance($guildCreationService, $userRepository);
     }
     
 }

@@ -9,8 +9,8 @@ use FTCBotCore\Message\GuildMemberUpdate as GuildMemberUpdateMessage;
 class GuildMemberUpdate 
 {
     
-    const INSERT_USER_ROLE_Q = "insert into users_roles VALUES (:user_id, :role_id) ON CONFLICT ON CONSTRAINT users_roles_pkey DO NOTHING";
-    const DELETE_ROLES_Q = "DELETE FROM users_roles WHERE user_id = :user_id";
+    const INSERT_USER_ROLE_Q = "insert into members_roles VALUES (:user_id, :role_id) ON CONFLICT ON CONSTRAINT members_roles_pkey DO NOTHING";
+    const DELETE_ROLES_Q = "DELETE FROM members_roles WHERE user_id = :user_id";
     const WHERE_ROLES_NOT_IN_CLAUSE = " AND role_id NOT IN (%s)";
     
     private $database;

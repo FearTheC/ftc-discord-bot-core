@@ -3,8 +3,8 @@
 namespace FTCBotCore\EventHandler;
 
 use FTCBotCore\Message\Message;
-use FTC\Discord\Model\GuildMemberRepository;
-use FTC\Discord\Model\GuildMember;
+use FTC\Discord\Model\Aggregate\GuildMemberRepository;
+use FTC\Discord\Model\Aggregate\GuildMember;
 
 class GuildMemberAdd 
 {

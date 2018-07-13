@@ -16,6 +16,7 @@ class CreateGuildsUsersTable extends AbstractMigration
         $table->addColumn('guild_id', 'biginteger');
         $table->addColumn('user_id', 'biginteger');
         $table->addColumn('nickname', 'string', ['null' => true]);
+        $table->addColumn('is_active', 'boolean', ['default' => true]);
         $table->addColumn('joined_date', 'datetime', ['timezone' => true, 'null' => true]);
         $table->addForeignKey('user_id', 'users', 'id', ['delete' => 'cascade', 'update' => 'cascade']);
         $table->addForeignKey('guild_id', 'guilds', 'id', ['delete' => 'cascade', 'update' => 'cascade']);

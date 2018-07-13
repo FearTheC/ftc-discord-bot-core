@@ -1,7 +1,7 @@
 <?php
 namespace FTCBotCore\Command;
 
-use FTC\Discord\Model\GuildMemberRepository;
+use FTC\Discord\Model\Aggregate\GuildMemberRepository;
 use FTC\Discord\Model\GuildMember;
 
 class CreateGuildMember

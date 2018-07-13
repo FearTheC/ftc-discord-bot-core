@@ -2,10 +2,10 @@
 namespace FTCBotCore\Command;
 
 
-use FTC\Discord\Model\GuildMemberRepository;
+use FTC\Discord\Model\Aggregate\GuildMemberRepository;
+use FTC\Discord\Model\Aggregate\GuildRoleRepository;
 use FTCBotCore\Message\Message;
 use FTCBotCore\Discord\Client;
-use FTC\Discord\Model\GuildRoleRepository;
 use FTCBotCore\Message\MessageCreate;
 use FTCBotCore\EventHandler\EventHandler;
 

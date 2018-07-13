@@ -5,7 +5,7 @@ class CountMembers
 {
     
     const SELECT_QUERY = "SELECT DISTINCT r.name, count(users.id) FROM users
-        JOIN users_roles roles on roles.user_id = users.id
+        JOIN members_roles roles on roles.user_id = users.id
         JOIN guilds_roles r ON r.id = roles.role_id AND r.guild_id = :guild_id
         GROUP BY (r.name);";
     

@@ -3,7 +3,7 @@
 
 use Phinx\Migration\AbstractMigration;
 
-class CreateUsersRoles extends AbstractMigration
+class CreateMembersRoles extends AbstractMigration
 {
     
     public function change()
@@ -13,7 +13,7 @@ class CreateUsersRoles extends AbstractMigration
             'primary_key' => ['user_id', 'role_id'],
         ];
         
-        $table = $this->table('users_roles', $options);
+        $table = $this->table('members_roles', $options);
         $table->addColumn('user_id', 'biginteger');
         $table->addColumn('role_id', 'biginteger');
         $table->addForeignKey('user_id', 'users', 'id', ['delete' => 'cascade', 'update' => 'cascade']);
