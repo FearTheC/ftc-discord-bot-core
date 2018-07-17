@@ -60,11 +60,7 @@ $callback = function(Message $message) use ($sm) {
     if ($sm->has($message->getEventType())) {
         $handler = $sm->get($message->getEventType());
         
-        if ($handler($message)) {
-            return false;
-            return true;
-        }
-        return false;
+        return $handler($message);
     }
 
     return true;
@@ -74,8 +70,17 @@ $callback = function(Message $message) use ($sm) {
 while(true) {
     try {
         $broker->consume($callback);
+    } catch(PDOException $e) {
+        var_dump(get_class($e));
+        var_dump($e->getMessage());
+        var_dump($e->getTraceAsString());
+        die();
     } catch (Exception $e) {
-        echo "CONNECTION WITH BROKER LOST ! Waiting for reconnecting\n";
+        var_dump(get_class($e));
+        var_dump($e->getMessage());
+        var_dump($e->getTraceAsString());
+        echo "CONNECTION WITH BROKER LOST !\n";
+//         sleep(2);
         $waitUponBrokerStart($sm);
         $broker->reconnect();
     }

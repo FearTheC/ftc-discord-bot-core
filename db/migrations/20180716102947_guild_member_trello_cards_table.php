@@ -3,7 +3,7 @@
 
 use Phinx\Migration\AbstractMigration;
 
-class CreateWebsitePermissions extends AbstractMigration
+class GuildMemberTrelloCardsTable extends AbstractMigration
 {
     /**
      * Change Method.
@@ -30,16 +30,13 @@ class CreateWebsitePermissions extends AbstractMigration
     {
         $options = [
             'id' => false,
+            'primary_key' => ['user_id'],
         ];
         
-        $table = $this->table('guilds_websites_permissions', $options);
-        $table->addColumn('guild_id', 'biginteger');
-        $table->addColumn('role_id', 'biginteger');
-        $table->addColumn('route_name', 'string');
-        $table->addForeignKey('guild_id', 'guilds', 'id', ['delete' => 'cascade', 'update' => 'cascade']);
-        $table->addForeignKey('role_id', 'guilds_roles', 'id', ['delete' => 'cascade', 'update' => 'cascade']);
+        $table = $this->table('trello_members_cards_ids', $options);
+        $table->addColumn('user_id', 'biginteger');
+        $table->addColumn('card_id', 'text');
+        $table->addForeignKey('user_id', 'users', 'id', ['delete' => 'cascade', 'update' => 'cascade']);
         $table->create();
-        
-        $this->execute("ALTER TABLE guilds_websites_permissions ADD CONSTRAINT uk_guilds_websites_permissions UNIQUE (role_id, route_name)");
     }
 }
