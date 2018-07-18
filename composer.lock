@@ -670,12 +670,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/QBonaventure/discord-db-postgresql.git",
-                "reference": "ef24e9719415948a7096a1650c8721da5646692d"
+                "reference": "98813e2e8bb87eff627a311b0823e7efb0bb7665"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/QBonaventure/discord-db-postgresql/zipball/ef24e9719415948a7096a1650c8721da5646692d",
-                "reference": "ef24e9719415948a7096a1650c8721da5646692d",
+                "url": "https://api.github.com/repos/QBonaventure/discord-db-postgresql/zipball/98813e2e8bb87eff627a311b0823e7efb0bb7665",
+                "reference": "98813e2e8bb87eff627a311b0823e7efb0bb7665",
                 "shasum": ""
             },
             "require": {
@@ -697,7 +697,7 @@
                     "email": "quentin@bonaventure.xyz"
                 }
             ],
-            "time": "2018-07-13T17:58:38+00:00"
+            "time": "2018-07-17T14:12:15+00:00"
         },
         {
             "name": "qbonaventure/discord-model",
@@ -705,12 +705,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/QBonaventure/discord-model.git",
-                "reference": "34305d4eed237a01ad6b19104b0bc5bb4a2c15bb"
+                "reference": "fbddd13ba38ae743457d4cf74e7c83ac4020c2d5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/QBonaventure/discord-model/zipball/34305d4eed237a01ad6b19104b0bc5bb4a2c15bb",
-                "reference": "34305d4eed237a01ad6b19104b0bc5bb4a2c15bb",
+                "url": "https://api.github.com/repos/QBonaventure/discord-model/zipball/fbddd13ba38ae743457d4cf74e7c83ac4020c2d5",
+                "reference": "fbddd13ba38ae743457d4cf74e7c83ac4020c2d5",
                 "shasum": ""
             },
             "require-dev": {
@@ -734,7 +734,7 @@
                     "email": "quentin@bonaventure.xyz"
                 }
             ],
-            "time": "2018-07-13T17:59:02+00:00"
+            "time": "2018-07-17T14:13:46+00:00"
         },
         {
             "name": "ralouphie/getallheaders",
@@ -1877,12 +1877,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpspec/prophecy.git",
-                "reference": "6471ce6aa91ec03e9fdf3ca188e277104d8a7d1c"
+                "reference": "dcf425ffc656e958ebf9780b796072e3daf44614"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/6471ce6aa91ec03e9fdf3ca188e277104d8a7d1c",
-                "reference": "6471ce6aa91ec03e9fdf3ca188e277104d8a7d1c",
+                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/dcf425ffc656e958ebf9780b796072e3daf44614",
+                "reference": "dcf425ffc656e958ebf9780b796072e3daf44614",
                 "shasum": ""
             },
             "require": {
@@ -1932,7 +1932,7 @@
                 "spy",
                 "stub"
             ],
-            "time": "2018-05-09T14:00:54+00:00"
+            "time": "2018-07-18T09:55:46+00:00"
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -1940,12 +1940,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "865662550c384bc1db7e51d29aeda1c2c161d69a"
+                "reference": "f4181f5c0a2af0180dadaeb576c6a1a7548b54bf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/865662550c384bc1db7e51d29aeda1c2c161d69a",
-                "reference": "865662550c384bc1db7e51d29aeda1c2c161d69a",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/f4181f5c0a2af0180dadaeb576c6a1a7548b54bf",
+                "reference": "f4181f5c0a2af0180dadaeb576c6a1a7548b54bf",
                 "shasum": ""
             },
             "require": {
@@ -1995,7 +1995,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2018-06-01T07:51:50+00:00"
+            "time": "2018-07-18T03:54:23+00:00"
         },
         {
             "name": "phpunit/php-file-iterator",
