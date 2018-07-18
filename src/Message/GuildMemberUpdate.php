@@ -3,12 +3,9 @@
 namespace FTCBotCore\Message;
 
 use FTCBotCore\Message\Message;
-use FTCBotCore\Message\Traits\GuildMemberPayload;
 
 class GuildMemberUpdate extends Message
 {
-    
-    use GuildMemberPayload;
     
     const EVENT_NAME = 'GUILD_MEMBER_UPDATE';
     
