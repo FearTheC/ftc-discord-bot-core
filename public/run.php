@@ -17,7 +17,10 @@ $botConfig = include 'config/autoload/bot.local.php';
 
 function alertOwner($discordClient, $ownerId)
 {
-    $discordClient->sendDM($ownerId, 'I\'ve stopped working');
+    
+    $error = error_get_last();
+    $errorMsg = sprintf('%s > %s:%s', $error['message'], $error['file'], $error['line']); 
+    $discordClient->sendDM($ownerId, 'I\'ve stopped working'."\n".$errorMsg);
 }
 
 register_shutdown_function('alertOwner', $sm->get('discord-http-client'), $botConfig['owner_id']);
