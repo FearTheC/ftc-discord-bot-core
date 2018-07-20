@@ -27,26 +27,28 @@ register_shutdown_function('alertOwner', $sm->get('discord-http-client'), $botCo
 
 
 
-$waitUponBrokerStart = function($sm) {
-    $brokerConfig = $sm->get('config')['broker'];
-    while (($connection = @fsockopen($brokerConfig['host'], $brokerConfig['port'])) === false) {
+$waitUponThirdServiceStart = function($sm, string $serviceName) {
+    printf('Reaching for service %s', $serviceName);
+    $config = $sm->get('config')[$serviceName];
+    while (($connection = @fsockopen($config['host'], $config['port'])) === false) {
         $wheel = ['-', '\\', '|', '/'];
         if (!isset($string)) {
-            $string = 'Waiting for broker service startup  ';
-            echo $string;
+            printf('Waiting for %s service startup  ', $serviceName);
         } else {
             foreach ($wheel as $char) {
-                printf("%c%s", 0x08, $char);
+                $string = sprintf("%c%s", 0x08, $char);
+                print $string;
                 sleep(1);
             }
         }
     }
     echo PHP_EOL;
     fclose($connection);
-    echo 'Broker service started up'.PHP_EOL;
+    printf('%s service started up'.PHP_EOL, ucfirst($serviceName));
 };
 
-$waitUponBrokerStart($sm);
+$waitUponThirdServiceStart($sm, 'broker');
+$waitUponThirdServiceStart($sm, 'core-db');
 
 
 
@@ -84,7 +86,8 @@ while(true) {
         var_dump($e->getTraceAsString());
         echo "CONNECTION WITH BROKER LOST !\n";
 //         sleep(2);
-        $waitUponBrokerStart($sm);
+die();
+        $waitUponThirdServiceStart($sm, 'broker');
         $broker->reconnect();
     }
 };

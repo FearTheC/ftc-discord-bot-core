@@ -1,7 +1,7 @@
 <?php
 namespace FTCBotCore\Command;
 
-class CountMembers
+class UpdateRole
 {
     
     const SELECT_QUERY = "SELECT DISTINCT r.name, count(users.id) FROM users

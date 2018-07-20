@@ -3,7 +3,6 @@ FROM php:7.2-fpm-alpine
 RUN apk --update --no-cache add \
     git \
     postgresql-dev; \
-    curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer; \
     docker-php-ext-install bcmath pgsql pdo pdo_pgsql && \
     sed -i '/phpize/i \
     [[ ! -f "config.m4" && -f "config0.m4" ]] && mv config0.m4 config.m4' \
@@ -20,10 +19,17 @@ COPY ./db/ /app/db/
 COPY ./phinx.yml.dist /app/
 COPY entrypoint.sh /
 
-WORKDIR /app 
+WORKDIR /app
 
-RUN chmod +x /entrypoint.sh
+RUN cd /app && composer install -o --no-dev && \
+    rm composer.* && \
+    cp -pf /app/config/autoload/bot.local.php.dist /app/config/autoload/bot.local.php && \
+    cp -pf /app/config/autoload/broker.local.php.dist /app/config/autoload/broker.local.php && \
+    cp -pf /app/config/autoload/db.local.php.dist /app/config/autoload/db.local.php && \
+    cp -pf /app/config/autoload/discord.local.php.dist /app/config/autoload/discord.local.php && \
+    cp -pf /app/phinx.yml.dist /app/phinx.yml && \
+    chmod +x /entrypoint.sh
+
 ENTRYPOINT ["/entrypoint.sh"]
 
 CMD ["php", "public/run.php"]
-#CMD ["php", "public/run.php"]

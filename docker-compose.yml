@@ -5,6 +5,9 @@ services:
     image: qbonaventure/discord-bot-core
     tty: true
     restart: always
+    links:
+      - core-db
+      - core-cache
     env_file:
       - .env
     volumes:
@@ -41,10 +44,28 @@ services:
     networks:
       ftcbot:
       
+  core-cache:
+    image: redis:alpine
+    expose:
+      - "6379"
+    volumes:
+      -  core_cache_data:/data
+    deploy:
+      labels:
+        ftcbot.service: core-cache
+      replicas: 1
+      placement:
+        constraints:
+          - node.role == manager
+      restart_policy:
+        condition: on-failure
+    networks:
+      ftcbot:
+
 networks:
   ftcbot:
 
 volumes:
   core_db:
   core_composer_cache:
- 
+  core_cache_data: 

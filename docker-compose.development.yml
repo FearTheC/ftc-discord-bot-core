@@ -26,7 +26,7 @@ services:
       POSTGRES_PASSWORD: password
       POSTGRES_DB: discord_bot
     volumes:
-      - core_db:/var/lib/postgresql/data:z
+      - core_db_data:/var/lib/postgresql/data:z
     networks:
       ftcbot_dev:
         aliases:
@@ -37,14 +37,13 @@ services:
     expose:
       - "6379"
     volumes:
-      - core_cache:/data:z
+      - core_cache_data:/data:z
     networks:
       ftcbot_dev:
       
 volumes:
-  core_db:
-  core_cache:
-  redis_data:
+  core_db_data:
+  core_cache_data:
       
 networks:
   ftcbot_dev:

@@ -90,9 +90,7 @@ class PresenceUpdate
     
     private function getGameId(string $name)
     {
-        $id= $this->cache->getGameId($name);
-        
-        if ($id) {
+        if ($id= $this->cache->getGameId($name)) {
             return $id;
         }
             
@@ -105,7 +103,7 @@ class PresenceUpdate
             $q = $this->database->prepare(self::INSERT_GAME_Q);
             $q->bindParam('name', $name, \PDO::PARAM_STR);
             $q->execute();
-            $id= $q->fetchColumn();
+            $id = $q->fetchColumn();
         }
         
         $this->cache->setGame($name, $id);
