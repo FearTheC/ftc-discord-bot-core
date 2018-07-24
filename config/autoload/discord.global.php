@@ -33,7 +33,7 @@ return [
             /**
              * Domain services
              */
-            FTC\Discord\Model\Service\GuildCreation::class => FTC\Discord\Container\Model\Service\GuildCreationFactory::class
+            \FTC\Discord\Model\Service\GuildCreation::class => \FTC\Discord\Container\Model\Service\GuildCreationFactory::class
         ],
     ],
 ];

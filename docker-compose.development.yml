@@ -1,4 +1,4 @@
-version: '3'
+version: '3.6'
   
 services:
   core:
@@ -48,4 +48,3 @@ volumes:
 networks:
   ftcbot_dev:
     external: true
- 
