@@ -6,6 +6,7 @@ error_reporting(E_ALL);
 use FTCBotCore\Broker\BrokerClient;
 use FTCBotCore\Message\Message;
 use FTCBotCore\Broker\Client\AMQPClient;
+use FTC\Discord\Db\Core;
 
 chdir(dirname(__DIR__));
 require 'vendor/autoload.php';
@@ -64,9 +65,12 @@ $callback = function(Message $message) use ($sm) {
     echo " [x] Received '".$message->getEventType().": ", json_encode($message->getData()).PHP_EOL;
     
     if ($sm->has($message->getEventType())) {
-        $handler = $sm->get($message->getEventType());
-        
-        return $handler($message);
+        try {
+            $handler = $sm->get($message->getEventType());
+            $result = $handler($message);
+        } catch(Exception $e) {
+            var_dump($e);
+        }
     }
 
     return true;
