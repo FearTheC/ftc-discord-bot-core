@@ -13,11 +13,19 @@ CREATE VIEW view_guilds_members AS
         members.guild_id,
         COALESCE(members.nickname, (SELECT username from users where users.id = members.user_id)) AS nickname,
         members.joined_date,
-        JSONB_AGG((SELECT x FROM (SELECT guilds_roles.id, guilds_roles.permissions, guilds_roles.name FROM guilds_roles WHERE guilds_roles.id = members_roles.role_id) as x)) as roles
+        CASE
+            WHEN count(mroles.id) = 0 THEN '[]'::jsonb
+            ELSE JSONB_AGG((SELECT x FROM (SELECT mroles.id, mroles.name, mroles.permissions) AS x)) 
+        END AS roles
     FROM guilds_users members
-    JOIN members_roles members_roles ON members_roles.user_id = members.user_id
+    LEFT OUTER JOIN (
+        SELECT mr.user_id, gr.guild_id, gr.id, gr.name, gr.permissions
+        FROM members_roles mr
+        JOIN guilds_roles gr ON gr.id = mr.role_id
+    ) as mroles on mroles.user_id = members.user_id and mroles.guild_id = members.guild_id
     GROUP BY members.user_id, members.guild_id, members.nickname, members.joined_date;
 EOT;
+
 
     public function up()
     {

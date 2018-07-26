@@ -26,7 +26,7 @@ class CreateWebsitePermissions extends AbstractMigration
      * Remember to call "create()" or "update()" and NOT "save()" when working
      * with the Table class.
      */
-    public function change()
+    public function up()
     {
         $options = [
             'id' => false,
@@ -41,5 +41,10 @@ class CreateWebsitePermissions extends AbstractMigration
         $table->create();
         
         $this->execute("ALTER TABLE guilds_websites_permissions ADD CONSTRAINT uk_guilds_websites_permissions UNIQUE (role_id, route_name)");
+    }
+    
+    public function down()
+    {
+        $this->execute('DROP TABLE guilds_websites_permissions');
     }
 }
