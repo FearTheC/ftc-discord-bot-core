@@ -51,13 +51,11 @@ class MessageCreate
             }
         }
         
-        
         $data = $message->getData();
-        
         if (isset($data['edited_timestamp'])) {
             $updateTime = new \DateTime($data['edited_timestamp']);
         }
-        var_dump((int) $data['channel_id']);
+
         $message = new GuildMessage(
             MessageId::create((int) $data['id']),
             ChannelId::create((int) $data['channel_id']),
