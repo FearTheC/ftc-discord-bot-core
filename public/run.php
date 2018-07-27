@@ -72,7 +72,7 @@ $callback = function(Message $message) use ($sm) {
             $errorRepo = $sm->get(ErrorMessageRepository::class);
             $errorMessage = ErrorMessage::createFromScalarTypes(
                 null,
-                $e->getCode(),
+                (int) $e->getCode(),
                 $e->getMessage(),
                 $e->getFile(),
                 $e->getLine(),
