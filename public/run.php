@@ -51,8 +51,6 @@ $waitUponThirdServiceStart = function($sm, string $serviceName) {
 $waitUponThirdServiceStart($sm, 'broker');
 $waitUponThirdServiceStart($sm, 'core-db');
 
-$dsn = sprintf(DSN, $dbConfig['host'], $dbConfig['port'], $dbConfig['database']);
-
 
 /**
  * @var AMQPClient $broker
