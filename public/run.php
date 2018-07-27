@@ -12,24 +12,23 @@ chdir(dirname(__DIR__));
 require 'vendor/autoload.php';
 
 $sm = include 'config/container.php';
-
 $botConfig = include 'config/autoload/bot.local.php';
+$dbConfig = (include 'config/autoload/db.local.php')['core-db'];
+
 
 
 function alertOwner($discordClient, $ownerId)
 {
     
     $error = error_get_last();
-    $errorMsg = sprintf('%s > %s:%s', $error['message'], $error['file'], $error['line']); 
+    $errorMsg = sprintf('%s > %s:%s', $error['message'], $error['file'], $error['line']);
     $discordClient->sendDM($ownerId, 'I\'ve stopped working'."\n".$errorMsg);
 }
 
 register_shutdown_function('alertOwner', $sm->get('discord-http-client'), $botConfig['owner_id']);
 
-
-
 $waitUponThirdServiceStart = function($sm, string $serviceName) {
-    printf('Reaching for service %s', $serviceName);
+    printf("Reaching for service %s\n", $serviceName);
     $config = $sm->get('config')[$serviceName];
     while (($connection = @fsockopen($config['host'], $config['port'])) === false) {
         $wheel = ['-', '\\', '|', '/'];
@@ -52,6 +51,7 @@ $waitUponThirdServiceStart = function($sm, string $serviceName) {
 $waitUponThirdServiceStart($sm, 'broker');
 $waitUponThirdServiceStart($sm, 'core-db');
 
+$dsn = sprintf(DSN, $dbConfig['host'], $dbConfig['port'], $dbConfig['database']);
 
 
 /**
@@ -62,17 +62,26 @@ $broker = $sm->get(BrokerClient::class);
 echo ' [*] Waiting for messages. To exit press CTRL+C', "\n";
 
 $callback = function(Message $message) use ($sm) {
-    echo " [x] Received '".$message->getEventType().": ", json_encode($message->getData()).PHP_EOL;
+    echo " [x] Received '".$message->__toString().PHP_EOL;
     
     if ($sm->has($message->getEventType())) {
         try {
             $handler = $sm->get($message->getEventType());
             $result = $handler($message);
         } catch(Exception $e) {
-            var_dump($e);
+            $errorRepo = $sm->get(ErrorMessageRepository::class);
+            $errorMessage = ErrorMessage::createFromScalarTypes(
+                $e->getCode(),
+                $e->getMessage(),
+                $e->getFile(),
+                $e->getLine(),
+                (string) $message
+                );
+            $errorRepo->save($errorMessage);
+            printf("\033[31m ERROR: %s \n %s \033[0m \n", (string) $e, (string) $message);
         }
     }
-
+    
     return true;
 };
 
@@ -90,8 +99,8 @@ while(true) {
         var_dump($e->getMessage());
         var_dump($e->getTraceAsString());
         echo "CONNECTION WITH BROKER LOST !\n";
-//         sleep(2);
-die();
+        sleep(2);
+        
         $waitUponThirdServiceStart($sm, 'broker');
         $broker->reconnect();
     }
