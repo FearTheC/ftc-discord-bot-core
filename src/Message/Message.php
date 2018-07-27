@@ -97,4 +97,9 @@ abstract class Message
         return $this->creationTime;
     }
     
+    public function __toString() : string
+    {
+        return $this->getEventType().': '.json_encode($this->getData());
+    }
+    
 }

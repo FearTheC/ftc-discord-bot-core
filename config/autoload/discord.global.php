@@ -31,7 +31,9 @@ return [
             \FTC\Discord\Model\Aggregate\GuildMessageRepository::class =>
                 \FTC\Discord\Db\Postgresql\Container\GuildMessageRepository::class,
             \FTC\Discord\Model\Aggregate\GuildWebsitePermissionRepository::class =>
-                \FTC\Discord\Db\Postgresql\Container\GuildWebsitePermissionRepository::class,
+               \FTC\Discord\Db\Postgresql\Container\GuildWebsitePermissionRepository::class,
+            \FTC\Discord\Model\Aggregate\ErrorMessageRepository::class =>
+                \FTC\Discord\Db\Postgresql\Container\ErrorMessageRepository::class,
             /**
              * Domain services
              */

@@ -620,12 +620,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/QBonaventure/discord-db-postgresql.git",
-                "reference": "98813e2e8bb87eff627a311b0823e7efb0bb7665"
+                "reference": "75141eac841a6d1ec0687af229120f01886b493b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/QBonaventure/discord-db-postgresql/zipball/98813e2e8bb87eff627a311b0823e7efb0bb7665",
-                "reference": "98813e2e8bb87eff627a311b0823e7efb0bb7665",
+                "url": "https://api.github.com/repos/QBonaventure/discord-db-postgresql/zipball/75141eac841a6d1ec0687af229120f01886b493b",
+                "reference": "75141eac841a6d1ec0687af229120f01886b493b",
                 "shasum": ""
             },
             "require": {
@@ -647,7 +647,7 @@
                     "email": "quentin@bonaventure.xyz"
                 }
             ],
-            "time": "2018-07-17T14:12:15+00:00"
+            "time": "2018-07-27T13:37:58+00:00"
         },
         {
             "name": "qbonaventure/discord-model",
@@ -655,12 +655,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/QBonaventure/discord-model.git",
-                "reference": "e5d417abceeb886e5410d83e070444b593f26027"
+                "reference": "556c5155d4b152f5aadf0ccae41761c30cf72521"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/QBonaventure/discord-model/zipball/e5d417abceeb886e5410d83e070444b593f26027",
-                "reference": "e5d417abceeb886e5410d83e070444b593f26027",
+                "url": "https://api.github.com/repos/QBonaventure/discord-model/zipball/556c5155d4b152f5aadf0ccae41761c30cf72521",
+                "reference": "556c5155d4b152f5aadf0ccae41761c30cf72521",
                 "shasum": ""
             },
             "require-dev": {
@@ -684,7 +684,7 @@
                     "email": "quentin@bonaventure.xyz"
                 }
             ],
-            "time": "2018-07-19T09:05:17+00:00"
+            "time": "2018-07-27T13:37:38+00:00"
         },
         {
             "name": "ralouphie/getallheaders",

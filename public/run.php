@@ -7,6 +7,8 @@ use FTCBotCore\Broker\BrokerClient;
 use FTCBotCore\Message\Message;
 use FTCBotCore\Broker\Client\AMQPClient;
 use FTC\Discord\Db\Core;
+use FTC\Discord\Model\Aggregate\ErrorMessageRepository;
+use FTC\Discord\Model\Aggregate\ErrorMessage;
 
 chdir(dirname(__DIR__));
 require 'vendor/autoload.php';
@@ -69,6 +71,7 @@ $callback = function(Message $message) use ($sm) {
         } catch(Exception $e) {
             $errorRepo = $sm->get(ErrorMessageRepository::class);
             $errorMessage = ErrorMessage::createFromScalarTypes(
+                null,
                 $e->getCode(),
                 $e->getMessage(),
                 $e->getFile(),

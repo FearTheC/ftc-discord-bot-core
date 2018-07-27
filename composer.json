@@ -21,7 +21,7 @@
 		"zendframework/zend-config-aggregator" : "^1.1",
 		"cheprasov/php-redis-client" : "^1.8",
 		"zendframework/zend-servicemanager" : "^3.3",
-		"qbonaventure/discord-db-postgresql" : "dev-master"
+		"qbonaventure/discord-db-postgresql": "dev-master"
 	},
 	"require-dev" : {
 		"phpunit/phpunit" : "^7.1"
