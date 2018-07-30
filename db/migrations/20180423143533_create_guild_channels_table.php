@@ -21,6 +21,7 @@ class CreateGuildChannelsTable extends AbstractMigration
         $table->addColumn('type_id', 'integer');
         $table->addColumn('permission_overwrite', 'jsonb');
         $table->addColumn('category_id', 'biginteger', ['null' => true]);
+        $table->addColumn('is_active', 'boolean', ['default' => true]);
         $table->addForeignKey('guild_id', 'guilds');
         $table->addForeignKey('type_id', 'channels_types');
         $table->create();

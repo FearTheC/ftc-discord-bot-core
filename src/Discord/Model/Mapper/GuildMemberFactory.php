@@ -7,7 +7,6 @@ use FTC\Discord\Model\ValueObject\Snowflake\UserId;
 use FTC\Discord\Model\ValueObject\Snowflake\RoleId;
 use FTC\Discord\Model\ValueObject\Name\NickName;
 use FTC\Discord\Model\Collection\GuildRoleIdCollection;
-use FTC\Discord\Model\ValueObject\Snowflake\GuildId;
 
 class GuildMemberFactory
 {

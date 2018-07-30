@@ -23,6 +23,7 @@ class CreateGuildMessageTable extends AbstractMigration
         $table->addColumn('update_time', 'datetime', ['timezone' => true, 'null' => true]);
         $table->addColumn('is_pinned', 'boolean', ['default' => false]);
         $table->addColumn('content', 'text');
+        $table->addColumn('is_active', 'boolean', ['default' => true]);
         
         $table->addForeignKey('author_id', 'users', 'id', ['delete' => 'cascade', 'update' => 'cascade']);
         $table->addForeignKey('channel_id', 'guilds_channels', 'id', ['delete' => 'cascade', 'update' => 'cascade']);

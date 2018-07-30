@@ -13,6 +13,10 @@ use FTC\Discord\Model\Channel\GuildChannel\TextChannel;
 use FTC\Discord\Model\Channel\GuildChannel\Voice;
 use FTC\Discord\Model\Collection\PermissionOverwriteCollection;
 use FTC\Discord\Model\Channel\GuildChannel\Category;
+use FTC\Discord\Model\Collection\UserIdCollection;
+use FTC\Discord\Model\ValueObject\Snowflake\UserId;
+use FTC\Discord\Model\ValueObject\Snowflake\MessageId;
+use FTC\Discord\Model\Channel\DMChannel\DM;
 
 class AbstractChannelFactory
 {
@@ -27,9 +31,18 @@ class AbstractChannelFactory
     
     public function create($data) : GuildChannel
     {
-        $b = $this->{$this->typeMethods[$data['type']]}($data);
+        $channel = $this->{$this->typeMethods[$data['type']]}($data);
         
-        return $b;
+        return $channel;
+    }
+    
+    private function createDMChannel($data)
+    {
+        return DM::create(
+            $this->extractId($data),
+            $this->extractRecipient($data),
+            $this->extractLastMessageId($data)
+        );
     }
     
     private function createGuildTextChannel($data)
@@ -43,7 +56,7 @@ class AbstractChannelFactory
             $this->extractTopic($data)
         );
     }
-    
+
     private function createGuildVoiceChannel($data)
     {
         return Voice::create(
@@ -66,6 +79,31 @@ class AbstractChannelFactory
             $this->extractPermissionOverwrites($data),
             $this->extractCategoryId($data)
         );
+    }
+    
+    private function extractLastMessageId($data) : MessageId
+    {
+        return MessageId::create((int) $data['last_message_id']);
+    }
+    
+    
+    private function extractRecipient($data)
+    {
+        $recipients = $this->extractRecipients($data)->getIterator();
+
+        return reset($recipients);
+    }
+    
+    private function extractRecipients($data) : UserIdCollection
+    {
+        $recipients = array_map(
+            function($recipient) {
+                return UserId::create((int) $recipient['id']);
+            },
+            $data['recipients']
+        );
+        
+        return new UserIdCollection(...$recipients);
     }
     
     private function extractId($data) : ChannelId

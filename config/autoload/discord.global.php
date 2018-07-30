@@ -28,6 +28,12 @@ return [
                 \FTC\Discord\Db\Postgresql\Container\GuildMemberRepository::class,
             \FTC\Discord\Model\Aggregate\GuildChannelRepository::class =>
                 \FTC\Discord\Db\Postgresql\Container\GuildChannelRepository::class,
+            
+            \FTC\Discord\Model\Channel\DMChannel\DMRepository::class =>
+                \FTC\Discord\Db\Postgresql\Container\DMRepositoryFactory::class,
+            \FTC\Discord\Model\Channel\DMChannel\GroupDMRepository::class =>
+                \FTC\Discord\Db\Postgresql\Container\GroupDMRepositoryFactory::class,
+            
             \FTC\Discord\Model\Aggregate\GuildMessageRepository::class =>
                 \FTC\Discord\Db\Postgresql\Container\GuildMessageRepository::class,
             \FTC\Discord\Model\Aggregate\GuildWebsitePermissionRepository::class =>

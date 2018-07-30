@@ -1,61 +1,47 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace FTCBotCore\EventHandler;
 
-
-use FTCBotCore\Db\DbCacheInterface;
 use FTCBotCore\Message\GuildMemberUpdate as GuildMemberUpdateMessage;
+use FTC\Discord\Model\Aggregate\GuildMemberRepository;
+use FTC\Discord\Model\Aggregate\GuildMember;
+use FTC\Discord\Model\ValueObject\Snowflake\RoleId;
+use FTC\Discord\Model\Collection\GuildRoleIdCollection;
+use FTC\Discord\Model\ValueObject\Name\NickName;
+use FTC\Discord\Model\ValueObject\Snowflake\UserId;
+use FTC\Discord\Model\ValueObject\Snowflake\GuildId;
 
 class GuildMemberUpdate 
 {
     
-    const INSERT_USER_ROLE_Q = "insert into members_roles VALUES (:user_id, :role_id) ON CONFLICT ON CONSTRAINT members_roles_pkey DO NOTHING";
-    const DELETE_ROLES_Q = "DELETE FROM members_roles WHERE user_id = :user_id";
-    const WHERE_ROLES_NOT_IN_CLAUSE = " AND role_id NOT IN (%s)";
-    
-    private $database;
-    
     /**
-     * @var DbCacheInterface
+     * @var GuildMemberRepository
      */
-    private $cache;
+    private $memberRepository;
     
-    
-    public function __construct($database, DbCacheInterface $cache)
+    public function __construct(GuildMemberRepository $memberRepository)
     {
-        $this->database = $database;
-        $this->cache = $cache;
+        $this->memberRepository = $memberRepository;
     }
     
 
     public function __invoke(GuildMemberUpdateMessage $message)
     {
-        $userId = $message->getUserId();
-        $guildId = $message->getGuildId();
-        $currentRoles = $message->getUserRoles();
-
-        $this->updateUserRoles($userId, $currentRoles);
-        
-        return true;
-    }
-
-    private function updateUserRoles(int $userId, array $roles)
-    {
-        $unpreparedQuery = self::DELETE_ROLES_Q;
-        if (count($roles) > 0) {
-            $unpreparedQuery .= sprintf(self::WHERE_ROLES_NOT_IN_CLAUSE, implode(',', $roles));
+        $userId = UserId::create((int) $message->getUserId());
+        $guildId = GuildId::create((int) $message->getGuildId());
+        $rolesIds = array_map(function($roleId) { return RoleId::create((int) $roleId); }, $message->getUserRoles());
+        $rolesIdsColl = new GuildRoleIdCollection(...$rolesIds);
+        if (!$nickname = $message->getData()['nick']) {
+            $nickname = $message->getData()['user']['username'];
         }
-        echo $unpreparedQuery;
-        $q = $this->database->prepare($unpreparedQuery);
-        $q->bindParam('user_id', $userId, \PDO::PARAM_INT);
-        $q->execute();
+        $nickname = NickName::create($nickname);
         
-        foreach ($roles as $roleId) {
-            $q = $this->database->prepare(self::INSERT_USER_ROLE_Q);
-            $q->bindParam('user_id', $userId, \PDO::PARAM_INT);
-            $q->bindParam('role_id', $roleId, \PDO::PARAM_INT);
-            $q->execute();
-        }
+        $member = GuildMember::register($userId, $rolesIdsColl, $nickname);
+
+        $this->memberRepository->save($member, $guildId);
+        
     }
 
 }

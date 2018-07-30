@@ -3,12 +3,9 @@
 namespace FTCBotCore\Discord\Model\Mapper;
 
 use FTCBotCore\Message\Message;
-use FTC\Discord\Model\Collection\GuildRoleCollection;
-use FTC\Discord\Model\Collection\GuildMemberCollection;
 use FTC\Discord\Model\ValueObject\Snowflake\GuildId;
 use FTC\Discord\Model\ValueObject\Snowflake\UserId;
 use FTC\Discord\Model\ValueObject\Name\GuildName;
-use FTC\Discord\Model\Collection\GuildChannelCollection;
 use FTC\Discord\Model\Aggregate\Guild;
 use FTC\Discord\Model\ValueObject\Snowflake\RoleId;
 use FTC\Discord\Model\Collection\GuildRoleIdCollection;
@@ -38,7 +35,7 @@ class GuildFactory
         
         
         
-        return  Guild::create($guildId, $name, $ownerId, $guildRoles, $members, $channels);
+        return  Guild::create($guildId, $name, $ownerId, new \DateTime(), $guildRoles, $members, $channels);
     }
     
 }

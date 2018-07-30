@@ -29,6 +29,9 @@ class PresenceUpdate
     
     public function __invoke(PresenceUpdateMessage $message)
     {
+        return true;
+        
+        
         $userId = $message->getUserId();
         $guildId = $message->getGuildId();
 //         $activity = $data['game'];

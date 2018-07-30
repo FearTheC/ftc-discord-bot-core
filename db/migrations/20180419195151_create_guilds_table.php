@@ -17,6 +17,8 @@ class CreateGuildsTable extends AbstractMigration
     	$table->addColumn('id', 'biginteger');
     	$table->addColumn('name', 'text');
     	$table->addColumn('owner_id', 'biginteger');
+    	$table->addColumn('joined_date', 'datetime', ['timezone' => true, 'default' => 'CURRENT_TIMESTAMP']);
+    	$table->addColumn('is_active', 'boolean', ['default' => true]);
     	$table->addForeignKey('owner_id', 'users', 'id', ['delete' => 'cascade', 'update' => 'cascade']);
     	$table->create();
     }

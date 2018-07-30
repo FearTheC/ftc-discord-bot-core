@@ -23,6 +23,7 @@ CREATE VIEW view_guilds_members AS
         FROM members_roles mr
         JOIN guilds_roles gr ON gr.id = mr.role_id
     ) as mroles on mroles.user_id = members.user_id and mroles.guild_id = members.guild_id
+    WHERE members.is_active = true
     GROUP BY members.user_id, members.guild_id, members.nickname, members.joined_date;
 EOT;
 

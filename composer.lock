@@ -139,12 +139,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "7bc46be28e4b01b96d0dfda8c58169072e626558"
+                "reference": "9133fe03c4df51c50303ddc61612c0b66b487c12"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/7bc46be28e4b01b96d0dfda8c58169072e626558",
-                "reference": "7bc46be28e4b01b96d0dfda8c58169072e626558",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/9133fe03c4df51c50303ddc61612c0b66b487c12",
+                "reference": "9133fe03c4df51c50303ddc61612c0b66b487c12",
                 "shasum": ""
             },
             "require": {
@@ -196,7 +196,7 @@
                 "rest",
                 "web service"
             ],
-            "time": "2018-06-25T23:51:40+00:00"
+            "time": "2018-07-28T20:27:54+00:00"
         },
         {
             "name": "guzzlehttp/promises",
@@ -255,12 +255,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/psr7.git",
-                "reference": "58f6e264ef0e4107c8b3d15a9c2e653b2bce0b4d"
+                "reference": "4b981cdeb8c13d22a6c193554f8c686f53d5c958"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/psr7/zipball/58f6e264ef0e4107c8b3d15a9c2e653b2bce0b4d",
-                "reference": "58f6e264ef0e4107c8b3d15a9c2e653b2bce0b4d",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/4b981cdeb8c13d22a6c193554f8c686f53d5c958",
+                "reference": "4b981cdeb8c13d22a6c193554f8c686f53d5c958",
                 "shasum": ""
             },
             "require": {
@@ -272,7 +272,7 @@
                 "psr/http-message-implementation": "1.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "~4.0"
+                "phpunit/phpunit": "~4.8.36 || ^5.7.27 || ^6.5.8"
             },
             "type": "library",
             "extra": {
@@ -313,7 +313,52 @@
                 "uri",
                 "url"
             ],
-            "time": "2018-06-08T08:55:26+00:00"
+            "time": "2018-07-29T08:09:46+00:00"
+        },
+        {
+            "name": "paragonie/random_compat",
+            "version": "v9.99.99",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/paragonie/random_compat.git",
+                "reference": "84b4dfb120c6f9b4ff7b3685f9b8f1aa365a0c95"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/84b4dfb120c6f9b4ff7b3685f9b8f1aa365a0c95",
+                "reference": "84b4dfb120c6f9b4ff7b3685f9b8f1aa365a0c95",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.*|5.*",
+                "vimeo/psalm": "^1"
+            },
+            "suggest": {
+                "ext-libsodium": "Provides a modern crypto API that can be used to generate random bytes."
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Paragon Initiative Enterprises",
+                    "email": "security@paragonie.com",
+                    "homepage": "https://paragonie.com"
+                }
+            ],
+            "description": "PHP 5.x polyfill for random_bytes() and random_int() from PHP 7",
+            "keywords": [
+                "csprng",
+                "polyfill",
+                "pseudorandom",
+                "random"
+            ],
+            "time": "2018-07-02T15:55:56+00:00"
         },
         {
             "name": "php-amqplib/php-amqplib",
@@ -620,12 +665,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/QBonaventure/discord-db-postgresql.git",
-                "reference": "75141eac841a6d1ec0687af229120f01886b493b"
+                "reference": "de7f81af4ba326ba923fda3894616a75effc69b9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/QBonaventure/discord-db-postgresql/zipball/75141eac841a6d1ec0687af229120f01886b493b",
-                "reference": "75141eac841a6d1ec0687af229120f01886b493b",
+                "url": "https://api.github.com/repos/QBonaventure/discord-db-postgresql/zipball/de7f81af4ba326ba923fda3894616a75effc69b9",
+                "reference": "de7f81af4ba326ba923fda3894616a75effc69b9",
                 "shasum": ""
             },
             "require": {
@@ -647,7 +692,7 @@
                     "email": "quentin@bonaventure.xyz"
                 }
             ],
-            "time": "2018-07-27T13:37:58+00:00"
+            "time": "2018-07-31T14:28:17+00:00"
         },
         {
             "name": "qbonaventure/discord-model",
@@ -655,12 +700,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/QBonaventure/discord-model.git",
-                "reference": "556c5155d4b152f5aadf0ccae41761c30cf72521"
+                "reference": "c9a939c0e2bf5180c42022e1ceffacae34a209d1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/QBonaventure/discord-model/zipball/556c5155d4b152f5aadf0ccae41761c30cf72521",
-                "reference": "556c5155d4b152f5aadf0ccae41761c30cf72521",
+                "url": "https://api.github.com/repos/QBonaventure/discord-model/zipball/c9a939c0e2bf5180c42022e1ceffacae34a209d1",
+                "reference": "c9a939c0e2bf5180c42022e1ceffacae34a209d1",
                 "shasum": ""
             },
             "require-dev": {
@@ -684,7 +729,7 @@
                     "email": "quentin@bonaventure.xyz"
                 }
             ],
-            "time": "2018-07-27T13:37:38+00:00"
+            "time": "2018-07-31T14:28:52+00:00"
         },
         {
             "name": "ralouphie/getallheaders",
@@ -728,21 +773,25 @@
         },
         {
             "name": "ramsey/uuid",
-            "version": "dev-master",
+            "version": "3.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ramsey/uuid.git",
-                "reference": "8a8b1c0d2a048740ce7b4e5f661306af327c0d90"
+                "reference": "d09ea80159c1929d75b3f9c60504d613aeb4a1e3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ramsey/uuid/zipball/8a8b1c0d2a048740ce7b4e5f661306af327c0d90",
-                "reference": "8a8b1c0d2a048740ce7b4e5f661306af327c0d90",
+                "url": "https://api.github.com/repos/ramsey/uuid/zipball/d09ea80159c1929d75b3f9c60504d613aeb4a1e3",
+                "reference": "d09ea80159c1929d75b3f9c60504d613aeb4a1e3",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.2",
+                "paragonie/random_compat": "^1.0|^2.0|9.99.99",
+                "php": "^5.4 || ^7.0",
                 "symfony/polyfill-ctype": "^1.8"
+            },
+            "replace": {
+                "rhumsaa/uuid": "self.version"
             },
             "require-dev": {
                 "codeception/aspect-mock": "^1.0 | ~2.0.0",
@@ -757,6 +806,7 @@
                 "squizlabs/php_codesniffer": "^2.3"
             },
             "suggest": {
+                "ext-ctype": "Provides support for PHP Ctype functions",
                 "ext-libsodium": "Provides the PECL libsodium extension for use with the SodiumRandomGenerator",
                 "ext-uuid": "Provides the PECL UUID extension for use with the PeclUuidTimeGenerator and PeclUuidRandomGenerator",
                 "ircmaxell/random-lib": "Provides RandomLib for use with the RandomLibAdapter",
@@ -801,7 +851,7 @@
                 "identifier",
                 "uuid"
             ],
-            "time": "2018-07-02T01:36:14+00:00"
+            "time": "2018-07-19T23:38:55+00:00"
         },
         {
             "name": "robmorgan/phinx",
@@ -880,12 +930,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/config.git",
-                "reference": "5d1d799de46fb2f1c5903dae5ded9df8cc991dc8"
+                "reference": "98d7805fa31752bade23c01e9d2e8a9b90d20181"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/config/zipball/5d1d799de46fb2f1c5903dae5ded9df8cc991dc8",
-                "reference": "5d1d799de46fb2f1c5903dae5ded9df8cc991dc8",
+                "url": "https://api.github.com/repos/symfony/config/zipball/98d7805fa31752bade23c01e9d2e8a9b90d20181",
+                "reference": "98d7805fa31752bade23c01e9d2e8a9b90d20181",
                 "shasum": ""
             },
             "require": {
@@ -935,7 +985,7 @@
             ],
             "description": "Symfony Config Component",
             "homepage": "https://symfony.com",
-            "time": "2018-06-25T17:06:32+00:00"
+            "time": "2018-07-26T11:25:51+00:00"
         },
         {
             "name": "symfony/console",
@@ -943,12 +993,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "1c70c40179c51bf22d3e71ece107272566a82f29"
+                "reference": "1ed8ba31403db259af03c7559f000beadd287314"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/1c70c40179c51bf22d3e71ece107272566a82f29",
-                "reference": "1c70c40179c51bf22d3e71ece107272566a82f29",
+                "url": "https://api.github.com/repos/symfony/console/zipball/1ed8ba31403db259af03c7559f000beadd287314",
+                "reference": "1ed8ba31403db259af03c7559f000beadd287314",
                 "shasum": ""
             },
             "require": {
@@ -1004,7 +1054,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2018-07-16T14:05:48+00:00"
+            "time": "2018-07-26T11:25:51+00:00"
         },
         {
             "name": "symfony/contracts",
@@ -1069,12 +1119,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/filesystem.git",
-                "reference": "87d17aa4b6ed33ed85a7ae3442f3c7ba3d8beaf8"
+                "reference": "15754f6a1ccc88b14be99092299338004a4c8575"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/filesystem/zipball/87d17aa4b6ed33ed85a7ae3442f3c7ba3d8beaf8",
-                "reference": "87d17aa4b6ed33ed85a7ae3442f3c7ba3d8beaf8",
+                "url": "https://api.github.com/repos/symfony/filesystem/zipball/15754f6a1ccc88b14be99092299338004a4c8575",
+                "reference": "15754f6a1ccc88b14be99092299338004a4c8575",
                 "shasum": ""
             },
             "require": {
@@ -1111,7 +1161,7 @@
             ],
             "description": "Symfony Filesystem Component",
             "homepage": "https://symfony.com",
-            "time": "2018-05-31T10:18:23+00:00"
+            "time": "2018-07-26T11:25:51+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -1236,12 +1286,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "baca29061390e4390ad5957d5b7d95cb8fb2e98c"
+                "reference": "2e09dcbd0f06c29ab366daf46f2715754115044b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/baca29061390e4390ad5957d5b7d95cb8fb2e98c",
-                "reference": "baca29061390e4390ad5957d5b7d95cb8fb2e98c",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/2e09dcbd0f06c29ab366daf46f2715754115044b",
+                "reference": "2e09dcbd0f06c29ab366daf46f2715754115044b",
                 "shasum": ""
             },
             "require": {
@@ -1287,7 +1337,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2018-05-31T10:18:23+00:00"
+            "time": "2018-07-26T11:25:51+00:00"
         },
         {
             "name": "zendframework/zend-config-aggregator",
@@ -2135,12 +2185,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "b2f113cff4f84c2e6d1646de4f30486a8453f9ff"
+                "reference": "1ad62f2c20d24a0139e0ab196feda2433fe4c004"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/b2f113cff4f84c2e6d1646de4f30486a8453f9ff",
-                "reference": "b2f113cff4f84c2e6d1646de4f30486a8453f9ff",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/1ad62f2c20d24a0139e0ab196feda2433fe4c004",
+                "reference": "1ad62f2c20d24a0139e0ab196feda2433fe4c004",
                 "shasum": ""
             },
             "require": {
@@ -2211,7 +2261,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2018-07-19T07:01:46+00:00"
+            "time": "2018-07-21T15:11:49+00:00"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",

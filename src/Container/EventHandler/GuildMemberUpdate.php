@@ -1,20 +1,21 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
+
 namespace FTCBotCore\Container\EventHandler;
 
 use Psr\Container\ContainerInterface;
 use FTCBotCore\EventHandler\GuildMemberUpdate as GuildMemberUpdateInstance;
-use FTC\Discord\Db\Core;
-use FTCBotCore\Db\DbCacheInterface;
+use FTC\Discord\Model\Aggregate\GuildMemberRepository;
 
 class GuildMemberUpdate
 {
     
     public function __invoke(ContainerInterface $container, $requestedName)
     {
-        $database = $container->get(Core::class);
-        $cache = $container->get(DbCacheInterface::class);
+        $memberRepository = $container->get(GuildMemberRepository::class);
 
-        return new GuildMemberUpdateInstance($database, $cache);
+        return new GuildMemberUpdateInstance($memberRepository);
     }
     
 }

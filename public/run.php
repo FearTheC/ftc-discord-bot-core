@@ -80,6 +80,7 @@ $callback = function(Message $message) use ($sm) {
                 );
             $errorRepo->save($errorMessage);
             printf("\033[31m ERROR: %s \n %s \033[0m \n", (string) $e, (string) $message);
+            return false;
         }
     }
     

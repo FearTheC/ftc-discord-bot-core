@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace FTCBotCore\EventHandler;
 
@@ -8,9 +10,6 @@ use FTC\Discord\Model\Aggregate\GuildMember;
 
 class GuildMemberAdd 
 {
-    
-    const ADD_USER_Q = "INSERT INTO users VALUES (:user_id, :username) ON CONFLICT ON CONSTRAINT users_pkey DO NOTHING";
-    const ADD_GUILD_USER_Q = "INSERT INTO guilds_users VALUES (:guild_id, :user_id)";
     
     /**
      * @var GuildMemberRepository
@@ -26,12 +25,18 @@ class GuildMemberAdd
     
     public function __invoke(Message $message)
     {
-        $guildId = $message->getGuildId();
+        $userId = UserId::create((int) $message->getUserId());
+        $guildId = GuildId::create((int) $message->getGuildId());
+        $rolesIds = array_map(function($roleId) { return RoleId::create((int) $roleId); }, $message->getUserRoles());
+        $rolesIdsColl = new GuildRoleIdCollection(...$rolesIds);
+        if (!$nickname = $message->getData()['nick']) {
+            $nickname = $message->getData()['user']['username'];
+        }
+        $nickname = NickName::create($nickname);
         
-        $member = GuildMember::register($message->getUserId(), $message->getUsername());
+        $member = GuildMember::register($userId, $rolesIdsColl, $nickname);
         
-        $this->repository->add($member);
-        $this->repository->addGuild($member, $guildId);
+        $this->repository->save($member, $guildId);
 
         return true;
     }

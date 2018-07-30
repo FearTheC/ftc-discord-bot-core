@@ -22,6 +22,7 @@ class CreateRolesTable extends AbstractMigration
         $table->addColumn('permissions', 'biginteger');
         $table->addColumn('is_mentionable', 'boolean');
         $table->addColumn('is_hoisted', 'boolean');
+        $table->addColumn('is_active', 'boolean', ['default' => true]);
         $table->addForeignKey('guild_id', 'guilds', 'id', ['delete' => 'cascade', 'update' => 'cascade']);
         $table->create();
     }

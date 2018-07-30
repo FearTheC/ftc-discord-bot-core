@@ -10,6 +10,7 @@ CREATE OR REPLACE VIEW view_roles_counts AS
 SELECT roles.id, roles.guild_id, roles.name, count(members_roles.user_id)
 FROM members_roles
 JOIN guilds_roles roles on roles.id = members_roles.role_id
+where roles.is_active = true
 GROUP BY roles.name, roles.id, roles.guild_id;
 EOT;
 
