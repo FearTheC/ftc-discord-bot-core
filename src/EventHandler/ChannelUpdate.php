@@ -28,6 +28,7 @@ class ChannelUpdate
         $channelFactory = new AbstractChannelFactory();
         $channel = $channelFactory->create($data);
         
+	return true; 
         $this->repository->save($channel, GuildId::create((int) $data['guild_id']));
         
         return true;

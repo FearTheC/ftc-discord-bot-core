@@ -15,7 +15,7 @@ class ChannelUpdateFactory
     {
         $channelRepository = $container->get(GuildChannelRepository::class);
 
-        return new ChannelCreate($channelRepository);
+        return new ChannelUpdate($channelRepository);
     }
     
 }
