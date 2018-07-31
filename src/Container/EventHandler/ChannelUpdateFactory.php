@@ -6,7 +6,7 @@ namespace FTCBotCore\Container\EventHandler;
 
 use Psr\Container\ContainerInterface;
 use FTC\Discord\Model\Aggregate\GuildChannelRepository;
-use FTCBotCore\EventHandler\ChannelCreate;
+use FTCBotCore\EventHandler\ChannelUpdate;
 
 class ChannelUpdateFactory
 {

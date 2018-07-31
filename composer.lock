@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cf6e5ebf821e6e633b75cb05d9eb362f",
+    "content-hash": "048312e4176414cb96202eb03b7fc363",
     "packages": [
         {
             "name": "beberlei/assert",
@@ -134,17 +134,93 @@
             "time": "2017-02-14T19:40:03+00:00"
         },
         {
+            "name": "fearthec/ftc-discord-db-postgresql",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FearTheC/ftc-discord-db-postgresql.git",
+                "reference": "5a4e40067730f050e8172539ff3b3f78a32971af"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FearTheC/ftc-discord-db-postgresql/zipball/5a4e40067730f050e8172539ff3b3f78a32971af",
+                "reference": "5a4e40067730f050e8172539ff3b3f78a32971af",
+                "shasum": ""
+            },
+            "require": {
+                "fearthec/ftc-discord-model": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "FTC\\Discord\\Db\\Postgresql\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Quentin Bonaventure",
+                    "email": "quentin@bonaventure.xyz"
+                }
+            ],
+            "time": "2018-08-02T07:44:37+00:00"
+        },
+        {
+            "name": "fearthec/ftc-discord-model",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FearTheC/ftc-discord-model.git",
+                "reference": "03f9702582b252e127edd698c6b9d8aad973e839"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FearTheC/ftc-discord-model/zipball/03f9702582b252e127edd698c6b9d8aad973e839",
+                "reference": "03f9702582b252e127edd698c6b9d8aad973e839",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "^6.3",
+                "psr/container": "^1.0"
+            },
+            "require-dev": {
+                "league/container": "^2.4",
+                "phpunit/phpunit": "^7.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "FTC\\Discord\\": "src",
+                    "FTC\\Discord\\Test\\": "tests"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Quentin Bonaventure",
+                    "email": "quentin@bonaventure.xyz"
+                }
+            ],
+            "time": "2018-08-02T07:37:19+00:00"
+        },
+        {
             "name": "guzzlehttp/guzzle",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "9133fe03c4df51c50303ddc61612c0b66b487c12"
+                "reference": "572593ad627db27b10e887527da24b9a97bb0fee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/9133fe03c4df51c50303ddc61612c0b66b487c12",
-                "reference": "9133fe03c4df51c50303ddc61612c0b66b487c12",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/572593ad627db27b10e887527da24b9a97bb0fee",
+                "reference": "572593ad627db27b10e887527da24b9a97bb0fee",
                 "shasum": ""
             },
             "require": {
@@ -196,7 +272,7 @@
                 "rest",
                 "web service"
             ],
-            "time": "2018-07-28T20:27:54+00:00"
+            "time": "2018-07-31T13:28:13+00:00"
         },
         {
             "name": "guzzlehttp/promises",
@@ -658,78 +734,6 @@
                 "response"
             ],
             "time": "2016-08-06T14:39:51+00:00"
-        },
-        {
-            "name": "qbonaventure/discord-db-postgresql",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/QBonaventure/discord-db-postgresql.git",
-                "reference": "de7f81af4ba326ba923fda3894616a75effc69b9"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/QBonaventure/discord-db-postgresql/zipball/de7f81af4ba326ba923fda3894616a75effc69b9",
-                "reference": "de7f81af4ba326ba923fda3894616a75effc69b9",
-                "shasum": ""
-            },
-            "require": {
-                "qbonaventure/discord-model": "dev-master"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "FTC\\Discord\\Db\\Postgresql\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Quentin Bonaventure",
-                    "email": "quentin@bonaventure.xyz"
-                }
-            ],
-            "time": "2018-07-31T14:28:17+00:00"
-        },
-        {
-            "name": "qbonaventure/discord-model",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/QBonaventure/discord-model.git",
-                "reference": "c9a939c0e2bf5180c42022e1ceffacae34a209d1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/QBonaventure/discord-model/zipball/c9a939c0e2bf5180c42022e1ceffacae34a209d1",
-                "reference": "c9a939c0e2bf5180c42022e1ceffacae34a209d1",
-                "shasum": ""
-            },
-            "require-dev": {
-                "league/container": "^2.4",
-                "phpunit/phpunit": "^7.2"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "FTC\\Discord\\": "src",
-                    "FTC\\Discord\\Test\\": "tests"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Quentin Bonaventure",
-                    "email": "quentin@bonaventure.xyz"
-                }
-            ],
-            "time": "2018-07-31T14:28:52+00:00"
         },
         {
             "name": "ralouphie/getallheaders",
@@ -1873,12 +1877,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpspec/prophecy.git",
-                "reference": "dcf425ffc656e958ebf9780b796072e3daf44614"
+                "reference": "dbfc2600dee41b0ca3786f274bc1287d85d1c8bf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/dcf425ffc656e958ebf9780b796072e3daf44614",
-                "reference": "dcf425ffc656e958ebf9780b796072e3daf44614",
+                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/dbfc2600dee41b0ca3786f274bc1287d85d1c8bf",
+                "reference": "dbfc2600dee41b0ca3786f274bc1287d85d1c8bf",
                 "shasum": ""
             },
             "require": {
@@ -1928,7 +1932,7 @@
                 "spy",
                 "stub"
             ],
-            "time": "2018-07-18T09:55:46+00:00"
+            "time": "2018-07-31T07:47:46+00:00"
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -2920,7 +2924,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "qbonaventure/discord-db-postgresql": 20
+        "fearthec/ftc-discord-db-postgresql": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
