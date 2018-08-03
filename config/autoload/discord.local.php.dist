@@ -1,7 +1,7 @@
 <?php
 return [
     'discord' => [
-        'token' => getenv('FTCBOT_DISCORD_TOKEN'), // The Discord bot token,
-        'auth_token' => getenv('FTCBOT_DISCORD_AUTH_TOKEN'), // HTTP auth header token
+        'token' => file_get_contents('/run/secrets/ftcbot-discord-token'), // The Discord bot token,
+        'auth_token' => file_get_contents('/run/secrets/ftcbot-discord-auth-token'), // HTTP auth header token
     ]
 ];

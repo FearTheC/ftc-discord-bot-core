@@ -32,7 +32,7 @@ register_shutdown_function('alertOwner', $sm->get('discord-http-client'), $botCo
 $waitUponThirdServiceStart = function($sm, string $serviceName) {
     printf("Reaching for service %s\n", $serviceName);
     $config = $sm->get('config')[$serviceName];
-    while (($connection = @fsockopen($config['host'], $config['port'])) === false) {
+    while (($connection = fsockopen(trim($config['host']), (int) trim($config['port']))) === false) {
         $wheel = ['-', '\\', '|', '/'];
         if (!isset($string)) {
             $string = "";
