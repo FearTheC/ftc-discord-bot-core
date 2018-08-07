@@ -47,7 +47,7 @@ $waitUponThirdServiceStart = function($sm, string $serviceName) {
             }
         }
     }
-    echo PHP_EOL;
+
     fclose($connection);
     printf('%s service started up'.PHP_EOL, ucfirst($serviceName));
 };
