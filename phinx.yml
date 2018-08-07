@@ -13,4 +13,11 @@ environments:
         pass: 'password'
         port: 5432 
         charset: utf8
-        
+    staging:
+        adapter: pgsql
+        host: '%%PHINX_DBHOST%%'
+        name: '%%PHINX_DBNAME%%'
+        user: /run/secrets/ftcbot-db-user
+        pass: /run/secrets/ftcbot-db-password
+        port: '%%PHINX_DBPORT%%' 
+        charset: utf8
