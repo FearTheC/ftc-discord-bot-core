@@ -8,6 +8,13 @@ services:
       dockerfile: Dockerfile
     tty: true
     restart: always
+    secrets:
+      - ftcbot-db-password
+      - ftcbot-db-user
+      - ftcbot-broker-password
+      - ftcbot-broker-username
+      - ftcbot-discord-auth-token
+      - ftcbot-discord-token
     env_file:
       - .env
     volumes:
@@ -41,6 +48,21 @@ services:
     networks:
       ftcbot_dev:
       
+secrets:
+  ftcbot-db-password:
+    file: /var/docker-secrets/ftcbot/dev/ftcbot-db-password
+  ftcbot-db-user:
+    file: /var/docker-secrets/ftcbot/dev/ftcbot-db-user
+  ftcbot-broker-password:
+    file: /var/docker-secrets/ftcbot/dev/ftcbot-broker-password
+  ftcbot-broker-username:
+    file: /var/docker-secrets/ftcbot/dev/ftcbot-broker-username
+  ftcbot-discord-auth-token:
+    file: /var/docker-secrets/ftcbot/dev/ftcbot-discord-auth-token
+  ftcbot-discord-token:
+    file: /var/docker-secrets/ftcbot/dev/ftcbot-discord-token
+    
+    
 volumes:
   core_db_data:
   core_cache_data:

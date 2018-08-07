@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "048312e4176414cb96202eb03b7fc363",
+    "content-hash": "f58b53165345f21a8443fb9edae0151e",
     "packages": [
         {
             "name": "beberlei/assert",
@@ -174,12 +174,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/FearTheC/ftc-discord-model.git",
-                "reference": "03f9702582b252e127edd698c6b9d8aad973e839"
+                "reference": "3d19b2d838b9b6fe51648fd591e141afd514737c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FearTheC/ftc-discord-model/zipball/03f9702582b252e127edd698c6b9d8aad973e839",
-                "reference": "03f9702582b252e127edd698c6b9d8aad973e839",
+                "url": "https://api.github.com/repos/FearTheC/ftc-discord-model/zipball/3d19b2d838b9b6fe51648fd591e141afd514737c",
+                "reference": "3d19b2d838b9b6fe51648fd591e141afd514737c",
                 "shasum": ""
             },
             "require": {
@@ -207,7 +207,7 @@
                     "email": "quentin@bonaventure.xyz"
                 }
             ],
-            "time": "2018-08-02T07:37:19+00:00"
+            "time": "2018-08-07T13:59:05+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -781,15 +781,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ramsey/uuid.git",
-                "reference": "d09ea80159c1929d75b3f9c60504d613aeb4a1e3"
+                "reference": "5d5eab97ee472de9f4eea01fa9204f48ed3669cd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ramsey/uuid/zipball/d09ea80159c1929d75b3f9c60504d613aeb4a1e3",
-                "reference": "d09ea80159c1929d75b3f9c60504d613aeb4a1e3",
+                "url": "https://api.github.com/repos/ramsey/uuid/zipball/5d5eab97ee472de9f4eea01fa9204f48ed3669cd",
+                "reference": "5d5eab97ee472de9f4eea01fa9204f48ed3669cd",
                 "shasum": ""
             },
             "require": {
+                "ext-json": "*",
                 "paragonie/random_compat": "^1.0|^2.0|9.99.99",
                 "php": "^5.4 || ^7.0",
                 "symfony/polyfill-ctype": "^1.8"
@@ -855,7 +856,7 @@
                 "identifier",
                 "uuid"
             ],
-            "time": "2018-07-19T23:38:55+00:00"
+            "time": "2018-08-05T21:59:04+00:00"
         },
         {
             "name": "robmorgan/phinx",
@@ -1173,12 +1174,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-ctype.git",
-                "reference": "9d31bef82d2e9b033f335d60b96611757f98c605"
+                "reference": "e3d826245268269cd66f8326bd8bc066687b4a19"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/9d31bef82d2e9b033f335d60b96611757f98c605",
-                "reference": "9d31bef82d2e9b033f335d60b96611757f98c605",
+                "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/e3d826245268269cd66f8326bd8bc066687b4a19",
+                "reference": "e3d826245268269cd66f8326bd8bc066687b4a19",
                 "shasum": ""
             },
             "require": {
@@ -1190,7 +1191,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.8-dev"
+                    "dev-master": "1.9-dev"
                 }
             },
             "autoload": {
@@ -1223,7 +1224,7 @@
                 "polyfill",
                 "portable"
             ],
-            "time": "2018-05-17T18:32:56+00:00"
+            "time": "2018-08-06T14:22:27+00:00"
         },
         {
             "name": "symfony/polyfill-mbstring",
@@ -1231,12 +1232,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-mbstring.git",
-                "reference": "25b83a5050c6607e2dfa814ffb15388caf7ce690"
+                "reference": "d0cd638f4634c16d8df4508e847f14e9e43168b8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/25b83a5050c6607e2dfa814ffb15388caf7ce690",
-                "reference": "25b83a5050c6607e2dfa814ffb15388caf7ce690",
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/d0cd638f4634c16d8df4508e847f14e9e43168b8",
+                "reference": "d0cd638f4634c16d8df4508e847f14e9e43168b8",
                 "shasum": ""
             },
             "require": {
@@ -1248,7 +1249,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.8-dev"
+                    "dev-master": "1.9-dev"
                 }
             },
             "autoload": {
@@ -1282,7 +1283,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2018-05-30T15:56:36+00:00"
+            "time": "2018-08-06T14:22:27+00:00"
         },
         {
             "name": "symfony/yaml",
@@ -1290,12 +1291,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "2e09dcbd0f06c29ab366daf46f2715754115044b"
+                "reference": "c6a122d108722a129659b7e7a30d23d74cdfa1db"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/2e09dcbd0f06c29ab366daf46f2715754115044b",
-                "reference": "2e09dcbd0f06c29ab366daf46f2715754115044b",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/c6a122d108722a129659b7e7a30d23d74cdfa1db",
+                "reference": "c6a122d108722a129659b7e7a30d23d74cdfa1db",
                 "shasum": ""
             },
             "require": {
@@ -1341,7 +1342,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2018-07-26T11:25:51+00:00"
+            "time": "2018-08-01T18:44:58+00:00"
         },
         {
             "name": "zendframework/zend-config-aggregator",
@@ -1877,12 +1878,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpspec/prophecy.git",
-                "reference": "dbfc2600dee41b0ca3786f274bc1287d85d1c8bf"
+                "reference": "4ba436b55987b4bf311cb7c6ba82aa528aac0a06"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/dbfc2600dee41b0ca3786f274bc1287d85d1c8bf",
-                "reference": "dbfc2600dee41b0ca3786f274bc1287d85d1c8bf",
+                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/4ba436b55987b4bf311cb7c6ba82aa528aac0a06",
+                "reference": "4ba436b55987b4bf311cb7c6ba82aa528aac0a06",
                 "shasum": ""
             },
             "require": {
@@ -1899,7 +1900,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.7.x-dev"
+                    "dev-master": "1.8.x-dev"
                 }
             },
             "autoload": {
@@ -1932,7 +1933,7 @@
                 "spy",
                 "stub"
             ],
-            "time": "2018-07-31T07:47:46+00:00"
+            "time": "2018-08-05T17:53:17+00:00"
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -2189,12 +2190,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "1ad62f2c20d24a0139e0ab196feda2433fe4c004"
+                "reference": "39a268b8532dd807fd71c200fa76cb7f7ebfe9e6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/1ad62f2c20d24a0139e0ab196feda2433fe4c004",
-                "reference": "1ad62f2c20d24a0139e0ab196feda2433fe4c004",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/39a268b8532dd807fd71c200fa76cb7f7ebfe9e6",
+                "reference": "39a268b8532dd807fd71c200fa76cb7f7ebfe9e6",
                 "shasum": ""
             },
             "require": {
@@ -2239,7 +2240,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "7.3-dev"
+                    "dev-master": "7.4-dev"
                 }
             },
             "autoload": {
@@ -2265,7 +2266,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2018-07-21T15:11:49+00:00"
+            "time": "2018-08-07T06:55:51+00:00"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",
@@ -2924,7 +2925,8 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "fearthec/ftc-discord-db-postgresql": 20
+        "fearthec/ftc-discord-db-postgresql": 20,
+        "fearthec/ftc-discord-model": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
