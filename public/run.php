@@ -35,17 +35,10 @@ $waitUponThirdServiceStart = function($sm, string $serviceName) {
 
 
     while (($connection = @fsockopen(trim($config['host']), (int) trim($config['port']))) === false) {
-        $wheel = ['-', '\\', '|', '/'];
         if (!isset($string)) {
-            $string = "";
             printf('Waiting for %s service startup  ', $serviceName);
-        } else {
-            foreach ($wheel as $char) {
-                $string = sprintf("%c%s", 0x08, $char);
-                print $string;
-                sleep(1);
-            }
         }
+            sleep(1);
     }
 
     fclose($connection);
