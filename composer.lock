@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f58b53165345f21a8443fb9edae0151e",
+    "content-hash": "1cdfccd9e91681f15189b4a6b7c325b0",
     "packages": [
         {
             "name": "beberlei/assert",
@@ -174,12 +174,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/FearTheC/ftc-discord-model.git",
-                "reference": "3d19b2d838b9b6fe51648fd591e141afd514737c"
+                "reference": "052ea10ed1f43111deb26bac2a470bd1ae4685a9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FearTheC/ftc-discord-model/zipball/3d19b2d838b9b6fe51648fd591e141afd514737c",
-                "reference": "3d19b2d838b9b6fe51648fd591e141afd514737c",
+                "url": "https://api.github.com/repos/FearTheC/ftc-discord-model/zipball/052ea10ed1f43111deb26bac2a470bd1ae4685a9",
+                "reference": "052ea10ed1f43111deb26bac2a470bd1ae4685a9",
                 "shasum": ""
             },
             "require": {
@@ -207,7 +207,7 @@
                     "email": "quentin@bonaventure.xyz"
                 }
             ],
-            "time": "2018-08-07T13:59:05+00:00"
+            "time": "2018-08-10T12:50:06+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -2926,7 +2926,8 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "fearthec/ftc-discord-db-postgresql": 20,
-        "fearthec/ftc-discord-model": 20
+        "fearthec/ftc-discord-model": 20,
+        "fearthec/ftc-discord-bot-core": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
