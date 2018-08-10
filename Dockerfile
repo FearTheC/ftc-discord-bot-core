@@ -27,7 +27,7 @@ RUN cd /app && composer install -o --no-dev && \
     cp -pf /app/config/autoload/broker.local.php.dist /app/config/autoload/broker.local.php && \
     cp -pf /app/config/autoload/db.local.php.dist /app/config/autoload/db.local.php && \
     cp -pf /app/config/autoload/discord.local.php.dist /app/config/autoload/discord.local.php && \
-    cp -pf /app/phinx.yml.dist /app/phinx.yml && \
+#    cp -pf /app/phinx.yml.dist /app/phinx.yml && \
     chmod +x /entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
