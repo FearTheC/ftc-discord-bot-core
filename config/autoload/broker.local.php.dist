@@ -2,8 +2,8 @@
 return [
     'broker' => [
         'host' => trim(getenv('FTCBOT_BROKER_HOST')),
-        'username' => file_get_contents('/run/secrets/ftcbot-broker-username'),
-        'password' => file_get_contents('/run/secrets/ftcbot-broker-password'),
+        'username' => trim(file_get_contents('/run/secrets/ftcbot-broker-username')),
+        'password' => trim(file_get_contents('/run/secrets/ftcbot-broker-password')),
         'port' => trim(getenv('FTCBOT_BROKER_PORT')),
     ],
     'dependencies' => [
