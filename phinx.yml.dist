@@ -18,8 +18,8 @@ environments:
         adapter: pgsql
         host: '%%PHINX_DBHOST%%'
         name: '%%PHINX_DBNAME%%'
-        user: /run/secrets/ftcbot-db-user
-        pass: /run/secrets/ftcbot-db-password
+        user: '%%PHINX_DBUSER%%'
+        pass: '%%PHINX_DBPASS%%'
         port: '%%PHINX_DBPORT%%' 
         charset: utf8
         

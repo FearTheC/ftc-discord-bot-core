@@ -2,3 +2,4 @@
 .*
 config/autoload/*.local.php
 config/app.php
+phinx.yml
