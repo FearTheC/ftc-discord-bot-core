@@ -5,10 +5,6 @@ error_reporting(E_ALL);
 
 use FTCBotCore\Broker\BrokerClient;
 use FTCBotCore\Message\Message;
-use FTCBotCore\Broker\Client\AMQPClient;
-use FTC\Discord\Db\Core;
-use FTC\Discord\Model\Aggregate\ErrorMessageRepository;
-use FTC\Discord\Model\Aggregate\ErrorMessage;
 
 chdir(dirname(__DIR__));
 require 'vendor/autoload.php';
