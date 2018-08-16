@@ -174,12 +174,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/FearTheC/ftc-discord-model.git",
-                "reference": "2b37ff70c8ce9665d394df85bc27c434834df046"
+                "reference": "e7241bb18306732eefb3f8256160f77eef2e6671"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FearTheC/ftc-discord-model/zipball/2b37ff70c8ce9665d394df85bc27c434834df046",
-                "reference": "2b37ff70c8ce9665d394df85bc27c434834df046",
+                "url": "https://api.github.com/repos/FearTheC/ftc-discord-model/zipball/e7241bb18306732eefb3f8256160f77eef2e6671",
+                "reference": "e7241bb18306732eefb3f8256160f77eef2e6671",
                 "shasum": ""
             },
             "require": {
@@ -207,7 +207,7 @@
                     "email": "quentin@bonaventure.xyz"
                 }
             ],
-            "time": "2018-08-16T06:53:54+00:00"
+            "time": "2018-08-16T08:54:43+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
