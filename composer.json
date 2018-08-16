@@ -21,9 +21,9 @@
 		"zendframework/zend-config-aggregator" : "^1.1",
 		"cheprasov/php-redis-client" : "^1.8",
 		"zendframework/zend-servicemanager" : "^3.3",
-		"fearthec/ftc-discord-db-postgresql": "dev-master",
+		"fearthec/ftc-discord-bot-core": "dev-master",
 		"fearthec/ftc-discord-model": "dev-master",
-		"fearthec/ftc-discord-bot-core": "dev-master"
+		"fearthec/ftc-discord-db-postgresql": "dev-master"
 	},
 	"require-dev" : {
 		"phpunit/phpunit" : "^7.1"

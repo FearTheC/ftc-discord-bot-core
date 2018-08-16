@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1cdfccd9e91681f15189b4a6b7c325b0",
+    "content-hash": "1d96cb77bbc1159421834ccbcf13ccd0",
     "packages": [
         {
             "name": "beberlei/assert",
@@ -139,12 +139,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/FearTheC/ftc-discord-db-postgresql.git",
-                "reference": "5a4e40067730f050e8172539ff3b3f78a32971af"
+                "reference": "62811209088c935e968c242796e8d33caf29d1b9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FearTheC/ftc-discord-db-postgresql/zipball/5a4e40067730f050e8172539ff3b3f78a32971af",
-                "reference": "5a4e40067730f050e8172539ff3b3f78a32971af",
+                "url": "https://api.github.com/repos/FearTheC/ftc-discord-db-postgresql/zipball/62811209088c935e968c242796e8d33caf29d1b9",
+                "reference": "62811209088c935e968c242796e8d33caf29d1b9",
                 "shasum": ""
             },
             "require": {
@@ -166,7 +166,7 @@
                     "email": "quentin@bonaventure.xyz"
                 }
             ],
-            "time": "2018-08-02T07:44:37+00:00"
+            "time": "2018-08-16T06:54:40+00:00"
         },
         {
             "name": "fearthec/ftc-discord-model",
@@ -174,12 +174,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/FearTheC/ftc-discord-model.git",
-                "reference": "052ea10ed1f43111deb26bac2a470bd1ae4685a9"
+                "reference": "2b37ff70c8ce9665d394df85bc27c434834df046"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FearTheC/ftc-discord-model/zipball/052ea10ed1f43111deb26bac2a470bd1ae4685a9",
-                "reference": "052ea10ed1f43111deb26bac2a470bd1ae4685a9",
+                "url": "https://api.github.com/repos/FearTheC/ftc-discord-model/zipball/2b37ff70c8ce9665d394df85bc27c434834df046",
+                "reference": "2b37ff70c8ce9665d394df85bc27c434834df046",
                 "shasum": ""
             },
             "require": {
@@ -207,7 +207,7 @@
                     "email": "quentin@bonaventure.xyz"
                 }
             ],
-            "time": "2018-08-10T12:50:06+00:00"
+            "time": "2018-08-16T06:53:54+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -215,12 +215,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "572593ad627db27b10e887527da24b9a97bb0fee"
+                "reference": "5c7a5c524e556113e7f8685e6880cbc4090c798d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/572593ad627db27b10e887527da24b9a97bb0fee",
-                "reference": "572593ad627db27b10e887527da24b9a97bb0fee",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/5c7a5c524e556113e7f8685e6880cbc4090c798d",
+                "reference": "5c7a5c524e556113e7f8685e6880cbc4090c798d",
                 "shasum": ""
             },
             "require": {
@@ -272,7 +272,7 @@
                 "rest",
                 "web service"
             ],
-            "time": "2018-07-31T13:28:13+00:00"
+            "time": "2018-08-08T04:37:00+00:00"
         },
         {
             "name": "guzzlehttp/promises",
@@ -442,12 +442,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-amqplib/php-amqplib.git",
-                "reference": "08a81740a76af14eb1fb9de09ee3680e6ab82c91"
+                "reference": "a39790b8d0ba8d1274a0720cfb34bb079075e616"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-amqplib/php-amqplib/zipball/08a81740a76af14eb1fb9de09ee3680e6ab82c91",
-                "reference": "08a81740a76af14eb1fb9de09ee3680e6ab82c91",
+                "url": "https://api.github.com/repos/php-amqplib/php-amqplib/zipball/a39790b8d0ba8d1274a0720cfb34bb079075e616",
+                "reference": "a39790b8d0ba8d1274a0720cfb34bb079075e616",
                 "shasum": ""
             },
             "require": {
@@ -505,7 +505,7 @@
                 "queue",
                 "rabbitmq"
             ],
-            "time": "2018-04-23T12:02:46+00:00"
+            "time": "2018-08-10T14:32:08+00:00"
         },
         {
             "name": "prooph/common",
@@ -781,12 +781,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ramsey/uuid.git",
-                "reference": "5d5eab97ee472de9f4eea01fa9204f48ed3669cd"
+                "reference": "4c467ce4d5a72c3cf0832c813d4d84d222c3d4bb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ramsey/uuid/zipball/5d5eab97ee472de9f4eea01fa9204f48ed3669cd",
-                "reference": "5d5eab97ee472de9f4eea01fa9204f48ed3669cd",
+                "url": "https://api.github.com/repos/ramsey/uuid/zipball/4c467ce4d5a72c3cf0832c813d4d84d222c3d4bb",
+                "reference": "4c467ce4d5a72c3cf0832c813d4d84d222c3d4bb",
                 "shasum": ""
             },
             "require": {
@@ -856,7 +856,7 @@
                 "identifier",
                 "uuid"
             ],
-            "time": "2018-08-05T21:59:04+00:00"
+            "time": "2018-08-12T15:49:01+00:00"
         },
         {
             "name": "robmorgan/phinx",
@@ -935,12 +935,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/config.git",
-                "reference": "98d7805fa31752bade23c01e9d2e8a9b90d20181"
+                "reference": "6057d8310a61aaf9baf42c36ac8ff0e6f2dc6966"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/config/zipball/98d7805fa31752bade23c01e9d2e8a9b90d20181",
-                "reference": "98d7805fa31752bade23c01e9d2e8a9b90d20181",
+                "url": "https://api.github.com/repos/symfony/config/zipball/6057d8310a61aaf9baf42c36ac8ff0e6f2dc6966",
+                "reference": "6057d8310a61aaf9baf42c36ac8ff0e6f2dc6966",
                 "shasum": ""
             },
             "require": {
@@ -990,7 +990,7 @@
             ],
             "description": "Symfony Config Component",
             "homepage": "https://symfony.com",
-            "time": "2018-07-26T11:25:51+00:00"
+            "time": "2018-08-10T07:17:45+00:00"
         },
         {
             "name": "symfony/console",
@@ -1067,12 +1067,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/contracts.git",
-                "reference": "316e2120250017445eef76c1b9a80ee863f90d6e"
+                "reference": "109a6decc39e5831500bb51ad27fd97ef157614b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/contracts/zipball/316e2120250017445eef76c1b9a80ee863f90d6e",
-                "reference": "316e2120250017445eef76c1b9a80ee863f90d6e",
+                "url": "https://api.github.com/repos/symfony/contracts/zipball/109a6decc39e5831500bb51ad27fd97ef157614b",
+                "reference": "109a6decc39e5831500bb51ad27fd97ef157614b",
                 "shasum": ""
             },
             "require": {
@@ -1116,7 +1116,7 @@
                 "interoperability",
                 "standards"
             ],
-            "time": "2018-07-13T17:06:58+00:00"
+            "time": "2018-07-14T08:12:57+00:00"
         },
         {
             "name": "symfony/filesystem",
@@ -2190,12 +2190,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "39a268b8532dd807fd71c200fa76cb7f7ebfe9e6"
+                "reference": "59d3ce6fa0ca8f4fda8177ef4f8bcdbbd8b51d9a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/39a268b8532dd807fd71c200fa76cb7f7ebfe9e6",
-                "reference": "39a268b8532dd807fd71c200fa76cb7f7ebfe9e6",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/59d3ce6fa0ca8f4fda8177ef4f8bcdbbd8b51d9a",
+                "reference": "59d3ce6fa0ca8f4fda8177ef4f8bcdbbd8b51d9a",
                 "shasum": ""
             },
             "require": {
@@ -2266,7 +2266,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2018-08-07T06:55:51+00:00"
+            "time": "2018-08-14T09:48:57+00:00"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",
@@ -2925,9 +2925,9 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "fearthec/ftc-discord-db-postgresql": 20,
+        "fearthec/ftc-discord-bot-core": 20,
         "fearthec/ftc-discord-model": 20,
-        "fearthec/ftc-discord-bot-core": 20
+        "fearthec/ftc-discord-db-postgresql": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
