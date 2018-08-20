@@ -6,4 +6,4 @@ weight = 5
 
 # Discord Bot Core
 
-Discover what this Hugo theme is all about and the core-concepts behind it.
+FTC Discord Bot Core documentation.
