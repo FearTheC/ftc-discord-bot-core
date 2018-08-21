@@ -41,7 +41,6 @@ class GuildMemberUpdate
         $member = GuildMember::register($userId, $rolesIdsColl, $nickname);
 
         $this->memberRepository->save($member, $guildId);
-        
     }
 
 }
