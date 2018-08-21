@@ -33,6 +33,8 @@ return [
                 \FTC\Discord\Db\Postgresql\Container\DMRepositoryFactory::class,
             \FTC\Discord\Model\Channel\DMChannel\GroupDMRepository::class =>
                 \FTC\Discord\Db\Postgresql\Container\GroupDMRepositoryFactory::class,
+            \FTC\Discord\Model\Repository\VocalPresenceRepository::class =>
+                \FTC\Discord\Db\Postgresql\Container\VocalPresenceRepository::class,
             
             \FTC\Discord\Model\Aggregate\GuildMessageRepository::class =>
                 \FTC\Discord\Db\Postgresql\Container\GuildMessageRepository::class,
@@ -43,7 +45,8 @@ return [
             /**
              * Domain services
              */
-            \FTC\Discord\Model\Service\GuildCreation::class => \FTC\Discord\Container\Model\Service\GuildCreationFactory::class
+            \FTC\Discord\Model\Service\GuildCreation::class => \FTC\Discord\Container\Model\Service\GuildCreationFactory::class,
+            \FTC\Discord\Model\Service\VocalPresenceService::class => \FTC\Discord\Container\Model\Service\VocalPresenceServiceFactory::class,
         ],
     ],
 ];
