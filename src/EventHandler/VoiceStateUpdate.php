@@ -38,7 +38,7 @@ class VoiceStateUpdate
             $channelId = ChannelId::create((int) $data['channel_id']);
         }
         
-        $this->vocalPresenceService->update($memberId, $guildId, $channelId, $sessionId);
+        $this->vocalPresenceService->update($memberId, $guildId, $channelId, $sessionId, $message->getCreationDateTime());
     }
     
 }

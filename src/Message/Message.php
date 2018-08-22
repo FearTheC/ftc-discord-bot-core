@@ -92,6 +92,11 @@ abstract class Message
         return null;
     }
     
+    public function getCreationDateTime() : \DateTime
+    {
+        return \DateTime::createFromFormat('U.u', $this->creationTime);
+    }
+    
     public function getCreationTime() : float
     {
         return $this->creationTime;
