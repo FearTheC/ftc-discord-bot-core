@@ -7,7 +7,7 @@ class CreateViewGuildsMembersVocalPresence extends AbstractMigration
         
         const VIEW_CREATION = <<<'EOT'
 CREATE VIEW view_guilds_members_vocal_presence AS
-    SELECT
+    SELECT DISTINCT
         vp.member_id,
         vp.channel_id,
         gc.guild_id,
