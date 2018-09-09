@@ -5,8 +5,13 @@ declare(strict_types=1);
 namespace FTCBotCore\EventHandler;
 
 use FTCBotCore\Message\Message;
-use FTC\Discord\Model\Aggregate\GuildMemberRepository;
+use FTC\Discord\Model\ValueObject\Snowflake\UserId;
+use FTC\Discord\Model\ValueObject\Snowflake\GuildId;
+use FTC\Discord\Model\ValueObject\Snowflake\RoleId;
+use FTC\Discord\Model\Collection\GuildRoleIdCollection;
+use FTC\Discord\Model\ValueObject\Name\NickName;
 use FTC\Discord\Model\Aggregate\GuildMember;
+use FTC\Discord\Model\Aggregate\GuildMemberRepository;
 
 class GuildMemberAdd 
 {
