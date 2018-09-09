@@ -8,6 +8,8 @@ services:
       dockerfile: Dockerfile
     tty: true
     restart: always
+    configs:
+      - ftcbot-phinx-yml
     secrets:
       - ftcbot-db-password
       - ftcbot-db-user
@@ -47,6 +49,10 @@ services:
       - core_cache_data:/data:z
     networks:
       ftcbot_dev:
+      
+configs:
+  ftcbot-phinx-yml:
+    file: ./phinx.yml
       
 secrets:
   ftcbot-db-password:
