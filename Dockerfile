@@ -1,4 +1,4 @@
-FROM php:7.2-fpm-alpine
+FROM php:7.2-fpm-alpine as builder
 
 RUN apk --update --no-cache add \
     git \
@@ -11,19 +11,35 @@ RUN apk --update --no-cache add \
     mkdir /app && \
     rm -rf /var/cache/apk/*
 
+COPY ./composer.* /app/
+WORKDIR /app
+
+
+FROM php:7.2-fpm-alpine
+
+RUN apk --update --no-cache add \
+    git \
+    postgresql-dev; \
+    docker-php-ext-install bcmath pgsql pdo pdo_pgsql && \
+    sed -i '/phpize/i \
+    [[ ! -f "config.m4" && -f "config0.m4" ]] && mv config0.m4 config.m4' \
+    /usr/local/bin/docker-php-ext-configure && \
+    mkdir /app && \
+    rm -rf /var/cache/apk/*
+
+WORKDIR /app
+RUN ls
+COPY --from=builder /app/vendor /app/vendor
 COPY ./src/ /app/src/
 COPY ./public/ /app/public/
 COPY ./config/ /app/config/
-COPY ./composer.* /app/
 COPY ./db/ /app/db/
-COPY ./phinx.yml.dist /app/
+# COPY ./phinx.yml /app/
 COPY entrypoint.sh /
 
 WORKDIR /app
 
-RUN cd /app && composer install -o --no-dev && \
-    rm composer.* && \
-    cp -pf /app/config/autoload/bot.local.php.dist /app/config/autoload/bot.local.php && \
+RUN cp -pf /app/config/autoload/bot.local.php.dist /app/config/autoload/bot.local.php && \
     cp -pf /app/config/autoload/broker.local.php.dist /app/config/autoload/broker.local.php && \
     cp -pf /app/config/autoload/db.local.php.dist /app/config/autoload/db.local.php && \
     cp -pf /app/config/autoload/discord.local.php.dist /app/config/autoload/discord.local.php && \
