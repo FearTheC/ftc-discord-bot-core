@@ -2,7 +2,7 @@
 namespace FTCBotCoreTest\Discord\Message;
 
 use PHPUnit\Framework\TestCase;
-use FTC\Discord\Message\PresenceUpdate;
+use FTCBotCore\Message\PresenceUpdate;
 
 class PresenceUpdateTest extends TestCase
 {
