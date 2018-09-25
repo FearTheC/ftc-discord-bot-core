@@ -139,12 +139,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/FearTheC/ftc-discord-db-postgresql.git",
-                "reference": "22bc0ea895ba7cfe2dd20343301ffe54d996dbb6"
+                "reference": "424e140e21fa14894015187af0187efa0fac973e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FearTheC/ftc-discord-db-postgresql/zipball/22bc0ea895ba7cfe2dd20343301ffe54d996dbb6",
-                "reference": "22bc0ea895ba7cfe2dd20343301ffe54d996dbb6",
+                "url": "https://api.github.com/repos/FearTheC/ftc-discord-db-postgresql/zipball/424e140e21fa14894015187af0187efa0fac973e",
+                "reference": "424e140e21fa14894015187af0187efa0fac973e",
                 "shasum": ""
             },
             "require": {
@@ -166,7 +166,7 @@
                     "email": "quentin@bonaventure.xyz"
                 }
             ],
-            "time": "2018-08-24T09:42:58+00:00"
+            "time": "2018-09-25T07:32:58+00:00"
         },
         {
             "name": "fearthec/ftc-discord-model",
@@ -174,12 +174,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/FearTheC/ftc-discord-model.git",
-                "reference": "20b37379152fca6d5edee0aeb60468dfed6a45f2"
+                "reference": "036c37f6aa868e19b600089821cecf03b2e175c0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FearTheC/ftc-discord-model/zipball/20b37379152fca6d5edee0aeb60468dfed6a45f2",
-                "reference": "20b37379152fca6d5edee0aeb60468dfed6a45f2",
+                "url": "https://api.github.com/repos/FearTheC/ftc-discord-model/zipball/036c37f6aa868e19b600089821cecf03b2e175c0",
+                "reference": "036c37f6aa868e19b600089821cecf03b2e175c0",
                 "shasum": ""
             },
             "require": {
@@ -208,7 +208,7 @@
                     "email": "quentin@bonaventure.xyz"
                 }
             ],
-            "time": "2018-08-24T09:41:44+00:00"
+            "time": "2018-09-25T07:42:35+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",

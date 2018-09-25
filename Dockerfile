@@ -14,6 +14,8 @@ RUN apk --update --no-cache add \
 COPY ./composer.* /app/
 WORKDIR /app
 
+RUN composer install --no-dev -o
+
 
 FROM php:7.2-fpm-alpine
 
