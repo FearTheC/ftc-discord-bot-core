@@ -36,7 +36,15 @@ services:
       POSTGRES_DB: discord_bot
     volumes:
       - core_db_data:/var/lib/postgresql/data:z
+    labels:
+      traefik.enable: true
+      traefik.backend: discord_bot_core_db
+      traefik.frontend.rule: HostRegexp:core-db.fearthec.test
+      traefik.frontend.priority: 1
+      traefik.docker.network: traefik
+      traefik.port: 5432
     networks:
+      traefik:
       ftcbot_dev:
         aliases:
           - core-db
@@ -75,4 +83,6 @@ volumes:
       
 networks:
   ftcbot_dev:
+    external: true
+  traefik:
     external: true
