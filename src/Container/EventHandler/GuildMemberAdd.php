@@ -1,9 +1,13 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
+
 namespace FTCBotCore\Container\EventHandler;
 
 use Psr\Container\ContainerInterface;
 use FTCBotCore\EventHandler\GuildMemberAdd as GuildMemberAddInstance;
 use FTC\Discord\Model\Aggregate\GuildMemberRepository;
+use FTC\Discord\Model\Aggregate\UserRepository;
 
 class GuildMemberAdd
 {
@@ -11,9 +15,10 @@ class GuildMemberAdd
     public function __invoke(ContainerInterface $container, $requestedName)
     {
         
-        $repository = $container->get(GuildMemberRepository::class);
+        $guildMemberRepository= $container->get(GuildMemberRepository::class);
+        $userRepository = $container->get(UserRepository::class);
 
-        return new GuildMemberAddInstance($repository);
+        return new GuildMemberAddInstance($guildMemberRepository, $userRepository);
     }
     
 }

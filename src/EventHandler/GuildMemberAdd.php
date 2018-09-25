@@ -12,6 +12,8 @@ use FTC\Discord\Model\Collection\GuildRoleIdCollection;
 use FTC\Discord\Model\ValueObject\Name\NickName;
 use FTC\Discord\Model\Aggregate\GuildMember;
 use FTC\Discord\Model\Aggregate\GuildMemberRepository;
+use FTC\Discord\Model\Aggregate\UserRepository;
+use FTC\Discord\Model\Aggregate\User;
 
 class GuildMemberAdd 
 {
@@ -19,13 +21,20 @@ class GuildMemberAdd
     /**
      * @var GuildMemberRepository
      */
-    private $repository;
+    private $guildMemberRepository;
+    
+    /**
+     * @var UserRepository
+     */
+    private $userRepository;
     
 
     public function __construct(
-        GuildMemberRepository $repository
+        GuildMemberRepository $guildMemberRepository,
+        UserRepository $userRepository
     ) {
-        $this->repository= $repository;
+        $this->guildMemberRepository= $guildMemberRepository;
+        $this->userRepository = $userRepository;
     }
     
     public function __invoke(Message $message)
@@ -40,8 +49,10 @@ class GuildMemberAdd
         $nickname = NickName::create($nickname);
         
         $member = GuildMember::register($userId, $rolesIdsColl, $nickname);
+        $user = User::fromArray($message->getData()['user']);
         
-        $this->repository->save($member, $guildId);
+        $this->userRepository->save($user);
+        $this->guildMemberRepository->save($member, $guildId);
 
         return true;
     }
