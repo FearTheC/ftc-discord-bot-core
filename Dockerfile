@@ -1,4 +1,4 @@
-FROM php:7.2-fpm-alpine as builder
+FROM php:7.3-rc-fpm-alpine3.8 as builder
 
 RUN apk --update --no-cache add \
     git \
@@ -17,7 +17,9 @@ WORKDIR /app
 RUN composer install --no-dev -o
 
 
-FROM php:7.2-fpm-alpine
+FROM php:7.3-rc-fpm-alpine3.8
+
+LABEL maintainer "Quentin Bonaventure <q.bonaventure@gmail.com>"
 
 RUN apk --update --no-cache add \
     git \

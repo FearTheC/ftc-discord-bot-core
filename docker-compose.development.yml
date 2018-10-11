@@ -1,31 +1,6 @@
 version: '3.6'
   
 services:
-  core:
-#    image: discord-bot-core
-    build:
-      context: .
-      dockerfile: Dockerfile
-    tty: true
-    restart: always
-    configs:
-      - ftcbot-phinx-yml
-    secrets:
-      - ftcbot-db-password
-      - ftcbot-db-user
-      - ftcbot-broker-password
-      - ftcbot-broker-username
-      - ftcbot-discord-auth-token
-      - ftcbot-discord-token
-    env_file:
-      - .env
-    volumes:
-      - .:/app/
-    external_links:
-      - broker
-    networks:
-      ftcbot_dev:
-    command: sh
       
   core-db:
     image: postgres:10-alpine
@@ -57,6 +32,35 @@ services:
       - core_cache_data:/data:z
     networks:
       ftcbot_dev:
+      
+      
+  core:
+#    image: discord-bot-core
+    build:
+      context: .
+      dockerfile: Dockerfile
+    tty: true
+    restart: always
+    depends_on:
+      - core-db
+    configs:
+      - ftcbot-phinx-yml
+    secrets:
+      - ftcbot-db-password
+      - ftcbot-db-user
+      - ftcbot-broker-password
+      - ftcbot-broker-username
+      - ftcbot-discord-auth-token
+      - ftcbot-discord-token
+    env_file:
+      - .env
+    volumes:
+      - .:/app/
+    external_links:
+      - broker
+    networks:
+      ftcbot_dev:
+    command: sh
       
 configs:
   ftcbot-phinx-yml:
